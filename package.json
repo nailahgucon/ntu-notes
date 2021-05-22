@@ -1,0 +1,24 @@
+{
+  "name": "ntu-notes",
+  "version": "1.0.0",
+  "description": "Personal NTU Module Notes Blog",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nailahgucon/ntu-notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nailahgucon/ntu-notes/issues"
+  },
+  "homepage": "https://github.com/nailahgucon/ntu-notes#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1"
+  }
+}
