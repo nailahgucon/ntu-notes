@@ -1,5 +1,5 @@
 ---
-title: Hello World
+title: Nailah's Notes Blog
 layout: "base.njk"
 ---
 
