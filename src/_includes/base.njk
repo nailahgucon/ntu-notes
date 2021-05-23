@@ -5,13 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
   <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
+  <link rel="stylesheet" href="{{ '/css/prism-coy-without-shadows.css' | url }}">
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </head>
 <body>
-<header>
-    <h1>{{ title }}</h1>
-</header>
 <main>
-{{ content | safe }}
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>Modules</h2>
+        <ul>
+            <li>
+            <a href="#" class="modname">Data Structures & Algorithms</a>
+            <a class="accordion"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/data-structures-and-algorithms/linked-list/assignments/insertSortedLL/" class="panel-a">Linked List</a>
+            <a href="#" class="panel-a">Lorem ipsum 2...</a>
+            </div>
+            </li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">portfolio</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Map</a></li>
+        </ul> 
+        <div class="social_media">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="main_content">
+        <div class="header">{{ title }}</div>  
+        <div class="info">
+          {{ content | safe }}
+      </div>
+
+      {# <div class="top_bar">
+				<div class="hamburger">
+					<i class="fas fa-bars"></i>
+				</div>
+			</div> #}
+    </div>
+</div>
 </main>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+{# <script>
+	var hamburger = document.querySelector(".hamburger");
+	var wrapper  = document.querySelector(".wrapper");
+	var backdrop = document.querySelector(".backdrop");
+
+	hamburger.addEventListener("click", function(){
+		wrapper.classList.add("active");
+	})
+
+	backdrop.addEventListener("click", function(){
+		wrapper.classList.remove("active");
+	})
+</script> #}
 </body>
 </html>
