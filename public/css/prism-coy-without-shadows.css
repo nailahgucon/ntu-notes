@@ -1,3 +1,5 @@
+/* Reference Site: https://www.11ty.dev/docs/plugins/syntaxhighlight/ */
+
 code[class*="language-"],
 pre[class*="language-"] {
 	color: black;
