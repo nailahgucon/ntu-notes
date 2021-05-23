@@ -101,9 +101,25 @@ body{
   margin-bottom: 20px;
 }
 
+h2{
+  color: #434e8a;
+}
+
+.modname{
+width: 85%;
+}
+
+div.info {
+  width: 90%;
+  }
+
 .accordion{
     float: right;
     margin-top: -1em;
+}
+
+.longmodname{
+  margin-top: -1.5em;
 }
 
 .panel{
@@ -116,6 +132,11 @@ body{
 
 .panel-a{
     padding: 5px;
+}
+
+#home{
+  float: right;
+  text-decoration: none;
 }
 /* .modname{
     margin: 0;
