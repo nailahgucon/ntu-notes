@@ -63,11 +63,6 @@
             </div>
             </li>
         </ul> 
-        <div class="social_media">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
     </div>
     <div class="main_content">
         
@@ -96,6 +91,18 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+const openBtn = document.getElementById('openModalBtn');
+const closeBtn = document.getElementById('closeModalBtn');
+const modal = document.getElementById('modal');
+
+openBtn.addEventListener('click', () => {
+	modal.classList.add('open');
+});
+
+closeBtn.addEventListener('click', () => {
+	modal.classList.remove('open');
+});
 </script>
 
 </body>

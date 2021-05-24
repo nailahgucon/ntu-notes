@@ -63,11 +63,6 @@
             </div>
             </li>
         </ul> 
-        <div class="social_media">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
     </div>
     <div class="main_content">
         
@@ -83,6 +78,12 @@
 </li>
 <li>
 <p><a href="/notes/data-structures-and-algorithms/linked-list/linked-list-main/">Data Structures and Algorithms - Linked List</a></p>
+</li>
+<li>
+<p><a href="/notes/manufacturing-processes/"></a></p>
+</li>
+<li>
+<p><a href="/notes/manufacturing-processes/cheatsheets/CA1/">Manufacturing Processes</a></p>
 </li>
 </ul>
 
@@ -107,6 +108,18 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+const openBtn = document.getElementById('openModalBtn');
+const closeBtn = document.getElementById('closeModalBtn');
+const modal = document.getElementById('modal');
+
+openBtn.addEventListener('click', () => {
+	modal.classList.add('open');
+});
+
+closeBtn.addEventListener('click', () => {
+	modal.classList.remove('open');
+});
 </script>
 
 </body>
