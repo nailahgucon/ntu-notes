@@ -2,44 +2,104 @@
 title: Data Structures and Algorithms - Linked List - Assignments
 ---
 
-## insertSortedLL()
----
-<br>
-Write a C function insertSortedLL()that asks the user to input an integer, then inserts it
-into the linked list in ascending order. The function, insertSortedLL(), should not allow
-inserting an integer if it already exists in the current linked list. The function should return the
-index position where the new item was added; if the function could not complete successfully, it
-should return a value of -1. You can assume that the linked list is either a sorted linked list or an
+## insertSortedLL() 
+
+<span class="tags"><a href="/notes/data-structures-and-algorithms/linked-list/linked-list-main/">Linked List</a></span>
+<span class="tags"><a href="#">Assignment</a></span>
+
+<hr>
+
+Write a C function <span class="functions">insertSortedLL()</span> that asks the user to input an integer, then inserts it into the linked list in ascending order. The function, <span class="functions">insertSortedLL()</span>, should not allow inserting an integer if it already exists in the current linked list. The function should return the index position where the new item was added; if the function could not complete successfully, it should return a value of -1. You can assume that the linked list is either a sorted linked list or an
 empty list.
 <br><br>
-The function prototype is given as follows:
 
-int insertSortedLL(LinkedList *ll, int item);
+**The function prototype is given as follows:**
 
-If the current linked list is: 2 3 5 7 9
+<span class="functions">int insertSortedLL(LinkedList *ll, int item);</span>
+<br><br>
+If the current linked list is: **2 3 5 7 9**
 
-Calling insertSortedLL()with a value of 8 will result in the following linked list:
+Calling <span class="functions">insertSortedLL()</span> with a value of **8** will result in the following linked list:
 
-2 3 5 7 8 9
-
+**2 3 5 7 8 9**
+<br><br>
 The function should return the index position where the new item was added as follows:
 
-The value 8 was added at index 4
+*The value 8 was added at index 4*
+<br><br>
+If the current linked list is: **5 7 9 11 15**
 
-If the current linked list is: 5 7 9 11 15
+Calling <span class="functions">insertSortedLL()</span> with a value of **7** will result in the following linked list:
 
-Calling insertSortedLL()with a value of 7 will result in the following linked list:
-
-5 7 9 11 15
-
+**5 7 9 11 15**
+<br><br>
 The function does not complete successfully (does not insert the value of 7 to the linked list) hence
 it should return a value of -1:
 
-The value 7 was added at index -1
+*The value 7 was added at index -1*
 <br><br>
 Your function should print the contents of the linked list after it has been created. This function
 may be called multiple times for each time your program is running.
-
+<br><br>
+<button id="openModalBtn">Click here for sample inputs/outputs</button>
+<div class="modal-wrapper" id="modal">
+	<div class="modal">
+		<div class="modal-header">
+			<h3>Sample Inputs & Outputs</h3>
+		</div>
+		<div class="modal-body">
+			<p class="functions">
+			1: Insert an integer to the sorted linked list: <br>
+			2: Print the index of the most recent input value: <br>
+			3: Print sorted linked list: <br>
+			0: Quit: <br><br>
+			Please input your choice (1/2/3/0): 1 <br>
+			Input an integer that you want to add to the linked list: 2 <br>
+			The resulting linked list is: 2 <br><br>
+			Please input your choice (1/2/3/0): 1 <br> 
+			Input an integer that you want to add to the linked list: 3 <br>
+			The resulting linked list is: 2 3 <br><br>
+			Please input your choice (1/2/3/0): 1 <br>
+			Input an integer that you want to add to the linked list: 5 <br>
+			The resulting linked list is: 2 3 5 <br><br>
+			Please input your choice (1/2/3/0): 1 <br>
+			Input an integer that you want to add to the linked list: 7 <br>
+			The resulting linked list is: 2 3 5 7 <br><br>
+			Please input your choice (1/2/3/0):1 <br>
+			Input an integer that you want to add to the linked list: 9 <br>
+			The resulting linked list is: 2 3 5 7 9 <br><br>
+			Please input your choice (1/2/3/0): 1 <br>
+			Input an integer that you want to add to the linked list: 8 <br>
+			The resulting linked list is: 2 3 5 7 8 9 <br><br>
+			Please input your choice (1/2/3/0): 2 <br>
+			The value 8 was added at index 4 <br><br>
+			Please input your choice(1/2/3/0):3 <br>
+			The resulting sorted linked list is: 2 3 5 7 8 9 <br><br>
+			Please input your choice(1/2/3/0): 1 <br>
+			Input an integer that you want to add to the linked list: 5 <br>
+			The resulting linked list is: 5 <br><br>
+			Please input your choice(1/2/3/0): 1 <br>
+			Input an integer that you want to add to the linked list: 7 <br>
+			The resulting linked list is: 5 7 <br><br>
+			Please input your choice(1/2/3/0): 1 <br>
+			Input an integer that you want to add to the linked list: 9 <br>
+			The resulting linked list is: 5 7 9 <br><br>
+			Please input your choice(1/2/3/0): 1 <br>
+			Input an integer that you want to add to the linked list: 5 <br>
+			The resulting linked list is: 5 7 9 <br><br>
+			Please input your choice (1/2/3/0): 2 <br>
+			The value 5 was added at index -1 <br><br>
+			Please input your choice(1/2/3/0):3 <br> 
+			The resulting sorted linked list is: 5 7 9 <br><br>
+			Please input your choice(1/2/3/0):
+			</p>
+		</div>
+		<div class="modal-footer">
+			<button id="closeModalBtn">Close</button>
+		</div>
+	</div>
+</div>
+<br>
 
 ```c
 #include <stdio.h>
@@ -285,3 +345,4 @@ int removeNode(LinkedList *ll, int index){
 	return -1;
 }
 ```
+
