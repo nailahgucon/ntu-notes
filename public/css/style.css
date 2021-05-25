@@ -253,6 +253,49 @@ button:focus {
  background-color: #eee;
  padding: 15px 0;
 }
+
+/* Card Styling */
+.card-div{
+  display: flex;
+  flex-flow: wrap;
+  margin:auto;
+  width: 70%;
+}
+
+.card {
+  background-image: linear-gradient(to right, #495496, #404579);
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  cursor: pointer;
+  padding: 40px 5px;
+  transition: all 0.1s ease-in-out;
+  margin: auto;
+  width: 250px;
+  text-align: center;
+ }
+
+ .card-a{
+   color: #fff;
+   text-decoration: none;
+ }
+
+ .card-p{
+   opacity: 0.7;
+   font-size: 0.8em;
+ }
+
+ .card:hover{
+   transform: translateY(-10px);
+   box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+ }
+
+ @media (max-width: 1024px) {
+  .card-div {
+    flex-direction: column;
+  }
+}
 /* .modname{
     margin: 0;
     display: inline-block;
