@@ -7,12 +7,12 @@ title: Manufacturing Processes
 <div class="card-div">
 <div class="card">
 <h3>Cheatsheets</h3>
-<p class="card-p"><a href="/notes/manufacturing-processes/cheatsheets/" class="card-a">Go to page to view >></a></p>
+<p class="card-p"><a href="/notes/manufacturing-processes/cheatsheets/" class="card-a">Go to page to view &raquo;</a></p>
 </div>
 
 <div class="card">
 <h3>Written Notes</h3>
-<p class="card-p"><a href="/notes/manufacturing-processes/written-notes/" class="card-a">Go to page to view >></a></p>
+<p class="card-p"><a href="/notes/manufacturing-processes/written-notes/" class="card-a">Go to page to view &raquo;</a></p>
 </div>
 
 </div>
