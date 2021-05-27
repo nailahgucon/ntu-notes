@@ -6,16 +6,17 @@ title: Manufacturing Processes - Cheatsheets
 <div class="card-div">
 <div class="card">
 <h3>CA1 Cheatsheet</h3>
-<p class="card-p"><a href="https://github.com/nailahgucon/ntu-notes-files/blob/main/manufacturing-processes/cheatsheets/CA1/ma2004_cheatsheet_CA1.pdf" class="card-a">Go to GitHub page to view >></a></p>
+<p class="card-p"><a href="https://github.com/nailahgucon/ntu-notes-files/blob/main/manufacturing-processes/cheatsheets/CA1/ma2004_cheatsheet_CA1.pdf" class="card-a" target="_blank">Go to GitHub page to view &raquo;</a></p>
 </div>
 
 <div class="card">
 <h3>CA2 Cheatsheet</h3>
-<p class="card-p"><a href="https://github.com/nailahgucon/ntu-notes-files/blob/main/manufacturing-processes/cheatsheets/CA2/ma2004_cheatsheet_CA2.pdf" class="card-a">Go to GitHub page to view >></a></p>
+<p class="card-p"><a href="https://github.com/nailahgucon/ntu-notes-files/blob/main/manufacturing-processes/cheatsheets/CA2/ma2004_cheatsheet_CA2.pdf" class="card-a" target="_blank">Go to GitHub page to view &raquo;</a></p>
 </div>
 
 <div class="card">
 <h3>Final Cheatsheet</h3>
-<p class="card-p"><a href="https://github.com/nailahgucon/ntu-notes-files/blob/main/manufacturing-processes/cheatsheets/Final/ma2004_cheatsheet_FINAL.pdf" class="card-a">Go to GitHub page to view >></a></p>
+<p class="card-p"><a href="https://github.com/nailahgucon/ntu-notes-files/blob/main/manufacturing-processes/cheatsheets/Final/ma2004_cheatsheet_FINAL.pdf" class="card-a" target="_blank">Go to GitHub page to view &raquo;</a></p>
 </div>
 </div>
+<p><a href="/notes/manufacturing-processes/"><bold>&#8656;</bold> Back to Manufacturing Processes</a></p>
