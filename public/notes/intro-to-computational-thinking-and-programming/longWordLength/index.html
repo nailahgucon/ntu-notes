@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intro to Computational Thinking and Programming - longWordLength</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/prism-coy-without-shadows.css">
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body>
+<main>
+<div class="wrapper">
+    <div class="sidebar">
+        <h2><a href="/" style="color:#fff;">Modules</a></h2>
+        <ul>
+            <li>
+            <a href="/notes/intro-to-computational-thinking-and-programming/" class="modname">Intro to Computational Thinking & Programming</a>
+            </li>
+            <li>
+            <a href="/notes/data-structures-and-algorithms/" class="modname">Data Structures & Algorithms</a>
+            <a class="accordion"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/data-structures-and-algorithms/linked-list/linked-list-main/" class="panel-a">Linked List</a>
+            <a href="#" class="panel-a">Lorem ipsum 2...</a>
+            </div>
+            </li>
+            <li>
+            <a href="/notes/data-science-and-ai/" class="modname">Data Science & AI</a>
+            <a class="accordion"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/data-science-and-ai/data-science/" class="panel-a">Data Science</a>
+            <a href="/notes/data-science-and-ai/ai/" class="panel-a">Aritificial Intelligence</a>
+            </div>
+            </li>
+            <li>
+            <a href="/notes/computer-organization-and-architecture/" class="modname">Computer Organisation & Architecture</a>
+            <a class="accordion longmodname"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/computer-organization-and-architecture/first-half/" class="panel-a">First Half</a>
+            <a href="/notes/computer-organization-and-architecture/second-half/" class="panel-a">Second Half</a>
+            </div>
+            </li>
+            <li>
+            <a href="/notes/linear-algebra-for-computing/" class="modname">Linear Algebra for Computing</a>
+            <a class="accordion"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/linear-algebra-for-computing/labs/" class="panel-a">Labs</a>
+            <a href="/notes/linear-algebra-for-computing/written-notes/" class="panel-a">Written Notes</a>
+            </div>
+            </li>
+            <li>
+            <a href="/notes/manufacturing-processes/" class="modname">Manufacturing Processes</a>
+            <a class="accordion"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/manufacturing-processes/cheatsheets/" class="panel-a">Cheatsheets</a>
+            <a href="/notes/manufacturing-processes/written-notes/" class="panel-a">PDF Notes</a>
+            </div>
+            </li>
+        </ul> 
+    </div>
+    <div class="main_content">
+        
+        <div class="header">Nailah's Notes Blog<a href="/" id="home"><i class="fas fa-home"></i></a></div>
+        <div class="info">
+          <h2>longWordLength</h2>
+<p><span class="tags"><a href="#">Character Strings</a></span></p>
+<hr>
+<p>Write a C function that accepts an English sentence as parameter, and returns the length of the longest word in the sentence. For example, if the sentence is <span class="functions">&quot;I am happy.&quot;</span>, then the length of the longest word <span class="functions">&quot;happy&quot;</span> in the sentence 5 will be returned. Assume that each word is a sequence of English letters. The function prototype is given as follows:
+<br><br>
+<span class="functions">int longWordLength(char *s);</span>
+<br><br></p>
+<p><button id="openModalBtn">Click here for sample inputs/outputs</button></p>
+<div class="modal-wrapper" id="modal">
+	<div class="modal">
+		<div class="modal-header">
+			<h3>Sample Inputs & Outputs</h3>
+		</div>
+		<div class="modal-body">
+			<p class="functions">
+			<bold>(1) Test Case 1:</bold><br>
+            Enter a string: I am happy.<br>
+            longWordLength(): 5<br>
+            <br>
+            <bold>(2) Test Case 2:</bold><br>
+            Enter a string: There are forty students in the class.<br>
+            longWordLength(): 8<br>
+            <br>
+            <bold>(3) Test Case 3:</bold><br>
+            Enter a string: Good day!<br>
+            longWordLength(): 4<br>
+            <br>
+            <bold>(4) Test Case 4:</bold><br>
+            Enter a string: Hello<br>
+            longWordLength(): 5
+			</p>
+		</div>
+		<div class="modal-footer">
+			<button id="closeModalBtn">Close</button>
+		</div>
+	</div>
+</div>
+<br>
+<pre class="language-c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ctype.h></span></span><br><span class="token keyword">int</span> <span class="token function">longWordLength</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><br>    <span class="token keyword">char</span> str<span class="token punctuation">[</span><span class="token number">80</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">*</span>p<span class="token punctuation">;</span><br>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Enter a string: \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token function">fgets</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token constant">stdin</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token operator">=</span><span class="token function">strchr</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token string">'\0'</span><span class="token punctuation">;</span><br>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"longWordLength(): %d\n"</span><span class="token punctuation">,</span> <span class="token function">longWordLength</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><span class="token keyword">int</span> <span class="token function">longWordLength</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">)</span><span class="token punctuation">{</span><br>    <span class="token keyword">int</span> longest <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>    <span class="token keyword">int</span> current <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>    <br>    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">*</span>s <span class="token operator">!=</span> <span class="token string">'\0'</span><span class="token punctuation">)</span><span class="token punctuation">{</span><br>        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isalpha</span><span class="token punctuation">(</span><span class="token operator">*</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span><br>            current<span class="token operator">++</span><span class="token punctuation">;</span><br>        <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span><br>            current <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>        <span class="token punctuation">}</span><br>        <span class="token keyword">if</span><span class="token punctuation">(</span>current <span class="token operator">></span> longest<span class="token punctuation">)</span><span class="token punctuation">{</span><br>            longest <span class="token operator">=</span> current<span class="token punctuation">;</span><br>        <span class="token punctuation">}</span> s<span class="token operator">++</span><span class="token punctuation">;</span><br>    <span class="token punctuation">}</span><br>    <span class="token keyword">return</span> longest<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br></code></pre>
+
+      </div>
+
+      
+    </div>
+</div>
+</main>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+const openBtn = document.getElementById('openModalBtn');
+const closeBtn = document.getElementById('closeModalBtn');
+const modal = document.getElementById('modal');
+
+openBtn.addEventListener('click', () => {
+	modal.classList.add('open');
+});
+
+closeBtn.addEventListener('click', () => {
+	modal.classList.remove('open');
+});
+</script>
+
+</body>
+</html>
