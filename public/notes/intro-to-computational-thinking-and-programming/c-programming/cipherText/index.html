@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intro to Computational Thinking and Programming - cipherText</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/prism-coy-without-shadows.css">
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body>
+<main>
+<div class="wrapper">
+    <div class="sidebar">
+        <h2><a href="/" style="color:#fff;">Modules</a></h2>
+        <ul>
+            <li>
+            <a href="/notes/intro-to-computational-thinking-and-programming/" class="modname">Intro to Computational Thinking & Programming</a>
+            </li>
+            <li>
+            <a href="/notes/data-structures-and-algorithms/" class="modname">Data Structures & Algorithms</a>
+            <a class="accordion"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/data-structures-and-algorithms/linked-list/linked-list-main/" class="panel-a">Linked List</a>
+            <a href="#" class="panel-a">Lorem ipsum 2...</a>
+            </div>
+            </li>
+            <li>
+            <a href="/notes/data-science-and-ai/" class="modname">Data Science & AI</a>
+            <a class="accordion"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/data-science-and-ai/data-science/" class="panel-a">Data Science</a>
+            <a href="/notes/data-science-and-ai/ai/" class="panel-a">Aritificial Intelligence</a>
+            </div>
+            </li>
+            <li>
+            <a href="/notes/computer-organization-and-architecture/" class="modname">Computer Organisation & Architecture</a>
+            <a class="accordion longmodname"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/computer-organization-and-architecture/first-half/" class="panel-a">First Half</a>
+            <a href="/notes/computer-organization-and-architecture/second-half/" class="panel-a">Second Half</a>
+            </div>
+            </li>
+            <li>
+            <a href="/notes/linear-algebra-for-computing/" class="modname">Linear Algebra for Computing</a>
+            <a class="accordion"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/linear-algebra-for-computing/labs/" class="panel-a">Labs</a>
+            <a href="/notes/linear-algebra-for-computing/written-notes/" class="panel-a">Written Notes</a>
+            </div>
+            </li>
+            <li>
+            <a href="/notes/manufacturing-processes/" class="modname">Manufacturing Processes</a>
+            <a class="accordion"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/manufacturing-processes/cheatsheets/" class="panel-a">Cheatsheets</a>
+            <a href="/notes/manufacturing-processes/written-notes/" class="panel-a">PDF Notes</a>
+            </div>
+            </li>
+        </ul> 
+    </div>
+    <div class="main_content">
+        
+        <a id="top"></a>
+        <div class="header">Nailah's Notes Blog<a href="/" id="home"><i class="fas fa-home"></i></a></div>
+        <div class="info">
+          <h2>cipherText</h2>
+<p><span class="tags"><a href="#">Character Strings</a></span></p>
+<hr>
+<p>Cipher text is a popular encryption technique. What we do in cipher text is that we can encrypt each apha <span class="functions">('a' .. 'z', 'A' .. 'Z')</span> character with +1. For example, <span class="functions">&quot;Hello&quot;</span> can be encrypted with +1 cipher to <span class="functions">&quot;Ifmmp&quot;</span>. If a character is <span class="functions">'z'</span> or <span class="functions">'Z'</span>, the corresponding encrypted character will be <span class="functions">'a'</span> or <span class="functions">'A'</span> respectively. For other characters, no encryption is performed. We use call by reference in the implementation. Write the C functions <span class="functions">cipher()</span> and <span class="functions">decipher()</span> with the following function prototypes:
+<br><br>
+<span class="functions">void cipher(char *s);</span>
+<span class="functions">void decipher(char *s);</span>
+<br><br>
+<button id="openModalBtn">Click here for sample inputs/outputs</button></p>
+<div class="modal-wrapper" id="modal">
+	<div class="modal">
+		<div class="modal-header">
+			<h3>Sample Inputs & Outputs</h3>
+		</div>
+		<div class="modal-body">
+			<p class="functions">
+			<bold>(1) Test Case 1:</bold><br>
+            Select one of the following options:<br>
+            1: cipher()<br>
+            2: decipher()<br>
+            3: exit()<br>
+            Enter your choice: 1<br>
+            Enter the string: 123a<br>
+            To cipher: 123a -> 123b<br>
+            Enter your choice: 3<br>
+            <br>
+            <bold>(2) Test Case 2:</bold><br>
+            Select one of the following options:<br>
+            1: cipher()<br>
+            2: decipher()<br>
+            3: exit()<br>
+            Enter your choice: 2<br>
+            Enter the string: 123b<br>
+            To decipher: 123b -> 123a<br>
+            Enter your choice: 3<br>
+            <br>
+            <bold>(3) Test Case 3:</bold><br>
+            Select one of the following options:<br>
+            1: cipher()<br>
+            2: decipher()<br>
+            3: exit()<br>
+            Enter your choice: 1<br>
+            Enter the string: abcxyz<br>
+            To cipher: abcxyz -> bcdyza<br>
+            Enter your choice: 2<br>
+            Enter the string: bcdyza<br>
+            To decipher: bcdyza -> abcxyz<br>
+            Enter your choice: 3<br>
+            <br>
+            <bold>(4) Test Case 4:</bold><br>
+            Select one of the following options:<br>
+            1: cipher()<br>
+            2: decipher()<br>
+            3: exit()<br>
+            Enter your choice: 1<br>
+            Enter the string: HELLO Hello<br>
+            To cipher: HELLO Hello -> IFMMP Ifmmp<br>
+            Enter your choice: 2<br>
+            Enter the string: IFMMP Ifmmp<br>
+            To decipher: IFMMP Ifmmp -> HELLO Hello<br>
+            Enter your choice: 3
+			</p>
+		</div>
+		<div class="modal-footer">
+			<button id="closeModalBtn">Close</button>
+		</div>
+	</div>
+</div>
+<br>
+<pre class="language-c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;ctype.h></span></span><br><span class="token keyword">void</span> <span class="token function">cipher</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">void</span> <span class="token function">decipher</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><br>    <span class="token keyword">char</span> str<span class="token punctuation">[</span><span class="token number">80</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dummychar<span class="token punctuation">,</span> <span class="token operator">*</span>p<span class="token punctuation">;</span><br>    <span class="token keyword">int</span> choice<span class="token punctuation">;</span><br><br>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Select one of the following options: \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"1: cipher() \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"2: decipher() \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"3: exit() \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>    <span class="token keyword">do</span> <span class="token punctuation">{</span><br>        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Enter your choice: \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>choice<span class="token punctuation">)</span><span class="token punctuation">;</span><br>        <span class="token keyword">switch</span> <span class="token punctuation">(</span>choice<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>            <span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span><br>                <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>dummychar<span class="token punctuation">)</span><span class="token punctuation">;</span><br>                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Enter the string: \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>                <span class="token function">fgets</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token constant">stdin</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>                <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token operator">=</span><span class="token function">strchr</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token string">'\0'</span><span class="token punctuation">;</span><br>                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"To cipher: %s -> "</span><span class="token punctuation">,</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span><br>                <span class="token function">cipher</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span><br>                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s\n"</span><span class="token punctuation">,</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span><br>                <span class="token keyword">break</span><span class="token punctuation">;</span><br>            <span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span><br>                <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>dummychar<span class="token punctuation">)</span><span class="token punctuation">;</span><br>                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Enter the string: \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>                <span class="token function">fgets</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span> <span class="token number">80</span><span class="token punctuation">,</span> <span class="token constant">stdin</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>                <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token operator">=</span><span class="token function">strchr</span><span class="token punctuation">(</span>str<span class="token punctuation">,</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token string">'\0'</span><span class="token punctuation">;</span><br>                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"To decipher: %s -> "</span><span class="token punctuation">,</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span><br>                <span class="token function">decipher</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span><br>                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s\n"</span><span class="token punctuation">,</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span><br>                <span class="token keyword">break</span><span class="token punctuation">;</span><br>            <span class="token keyword">default</span><span class="token operator">:</span><br>                <span class="token keyword">break</span><span class="token punctuation">;</span><br>        <span class="token punctuation">}</span><br>    <span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>choice <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">void</span> <span class="token function">cipher</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">)</span><span class="token punctuation">{</span><br>    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br><br>    <span class="token keyword">while</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">'\0'</span><span class="token punctuation">)</span><span class="token punctuation">{</span><br>        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">isdigit</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">{</span><br>            <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">'Z'</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">'z'</span><span class="token punctuation">)</span><br>                <span class="token operator">++</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span><br>            <span class="token keyword">else</span><br>                s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-=</span> <span class="token number">25</span><span class="token punctuation">;</span><br>     <span class="token punctuation">}</span><br>     <span class="token operator">++</span>i<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span>    <br><span class="token punctuation">}</span><br><br><span class="token keyword">void</span> <span class="token function">decipher</span><span class="token punctuation">(</span><span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">)</span><span class="token punctuation">{</span><br>    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br><br>    <span class="token keyword">while</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">'\0'</span><span class="token punctuation">)</span><span class="token punctuation">{</span><br>        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">isdigit</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">' '</span><span class="token punctuation">)</span><span class="token punctuation">{</span><br>            <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">'A'</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token string">'a'</span><span class="token punctuation">)</span><br>                <span class="token operator">--</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span><br>            <span class="token keyword">else</span><br>                s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">25</span><span class="token punctuation">;</span><br>     <span class="token punctuation">}</span><br>     <span class="token operator">++</span>i<span class="token punctuation">;</span><br>    <span class="token punctuation">}</span>   <br><span class="token punctuation">}</span><br></code></pre>
+
+        <div class="back-to-top tags"><a href="#top">Back to top</a></div>
+      </div>
+
+      
+    </div>
+</div>
+</main>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+const openBtn = document.getElementById('openModalBtn');
+const closeBtn = document.getElementById('closeModalBtn');
+const modal = document.getElementById('modal');
+
+openBtn.addEventListener('click', () => {
+	modal.classList.add('open');
+});
+
+closeBtn.addEventListener('click', () => {
+	modal.classList.remove('open');
+});
+</script>
+
+</body>
+</html>
