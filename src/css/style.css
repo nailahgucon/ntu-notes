@@ -292,6 +292,12 @@ button:focus {
    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
  }
 
+ .back-to-top{
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
+
  @media (max-width: 1024px) {
   .card-div {
     flex-direction: column;
