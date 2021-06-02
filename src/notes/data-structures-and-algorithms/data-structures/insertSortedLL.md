@@ -5,7 +5,7 @@ pageTitle: insertSortedLL()
 
 ## insertSortedLL() 
 
-<span class="tags"><a href="/notes/data-structures-and-algorithms/linked-list/linked-list-main/">Linked List</a></span>
+<span class="tags"><a href="#">Linked List</a></span>
 <span class="tags"><a href="#">Assignment</a></span>
 
 <hr>
