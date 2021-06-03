@@ -1,5 +1,5 @@
 ---
-title: Data Structures and Algorithms - Linked List - Assignments
+title: Data Structures and Algorithms - Linked List
 pageTitle: insertSortedLL()
 ---
 

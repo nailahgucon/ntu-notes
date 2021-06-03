@@ -2,10 +2,10 @@
 title: Data Structures and Algorithms - Data Structures
 ---
 
-## Data Structures
-<br>
+## Data Structures <br><br>
+<h3 style="text-align:center">Linked List</h3><br>
 <div class="card-div">
-{%- for post in collections.1107-data-structures-code -%}
+{%- for post in collections.1107-data-structures-linked-list-code -%}
     <div class="card">
     <h3>{{ post.data.pageTitle }}</h3>
     <p class="card-p"><a href="{{ post.url }}" class="card-a">Go to page to view &raquo;</a></p>

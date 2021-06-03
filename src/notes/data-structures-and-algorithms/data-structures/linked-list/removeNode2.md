@@ -1,0 +1,164 @@
+---
+title: Data Structures and Algorithms - Linked List - Assignments
+pageTitle: removeNode2()
+---
+
+## removeNode2()
+
+<span class="tags"><a href="#">Linked List</a></span>
+<span class="tags"><a href="#">Lab</a></span>
+<span class="tags"><a href="/notes/data-structures-and-algorithms/data-structures/removeNode/">removeNode()</a></span>
+
+<hr>
+
+Re-write the function <span class="functions">removeNode()</span> using the LinkedList struct
+<p style="font-size: 0.8em; font-style: italic;">(click on the <span class="functions">blue removeNode() tag</span> above to get redirected to the code for <span class="functions">removeNode()</span>)</p>
+<br>
+
+**The function prototype is given as follows:**
+
+<span class="functions">int removeNode2(LinkedList *ll, int index);</span>
+<br>
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct _listnode{
+    int item;
+    struct _listnode *next;
+} ListNode;
+
+typedef struct _linkedlist{
+    ListNode *head;
+    int size;
+} LinkedList;
+
+void printList2(LinkedList ll);
+ListNode* findNode2(LinkedList ll, int index);
+int insertNode2(LinkedList *ll, int index, int item);
+
+int removeNode2(LinkedList *ll,int index);
+
+int main()
+{
+    LinkedList ll;
+    ll.head =NULL;
+    ll.size = 0;
+    int item;
+    int index;
+
+    printf("Enter a list of numbers, terminated by any non-digit character: \n");
+    while(scanf("%d",&item))
+    {
+        if(!insertNode2(&ll,ll.size, item)) break;
+    }
+
+    scanf("%*s");
+
+    printList2(ll);
+
+    while(1){
+        printf("Enter the index of the node to be removed: ");
+        scanf("%d",&index);
+
+        if(!removeNode2(&ll,index)){
+            printf("The node cannot be removed.\n");
+            break;
+        }
+
+        printf("After the removal operation,\n");
+        printList2(ll);
+    }
+
+    printList2(ll);
+    return 0;
+}
+
+void printList2(LinkedList ll){
+    if(ll.head != NULL){
+        ListNode *cur = ll.head;
+        printf("Current List has %d elements: ",ll.size);
+
+        while (cur != NULL){
+            printf("%d ", cur->item);
+            cur = cur->next;
+        }
+        printf("\n");
+    }
+}
+
+ListNode* findNode2(LinkedList ll, int index)
+{
+   if(ll.head != NULL){
+        ListNode *cur = ll.head;
+        if (cur==NULL || index<0 || index >ll.size)
+           return NULL;
+
+        while(index>0){
+            cur=cur->next;
+            if (cur==NULL)
+                return NULL;
+            index--;
+        }
+        return cur;
+   }
+   else
+     return NULL;
+}
+
+int insertNode2(LinkedList *ll, int index, int item){
+    ListNode  *pre, *newNode;
+    // If empty list or inserting first node, update head pointer
+    if (index == 0){
+        newNode = malloc(sizeof(ListNode));
+        newNode->item = item;
+        newNode->next = ll->head;
+
+        ll->head = newNode;
+        ll->size++;
+        return 1;
+    }
+    // Find the nodes before and at the target position
+    // Create a new node and reconnect the links
+    else if ((pre = findNode2(*ll, index-1)) != NULL){
+        newNode = malloc(sizeof(ListNode));
+        newNode->item = item;
+        newNode->next = pre->next;
+        pre->next = newNode;
+        ll->size++;
+        return 1;
+    }
+    return 0;
+}
+
+int removeNode2(LinkedList *ll, int index) {
+	ListNode *cur, *pre;
+
+	if (ll->head ==NULL) return -1;
+
+	if (index==0)
+	{
+		cur=ll->head;
+		ll->head =cur->next;
+		free(cur);
+		ll->size --;
+		return 0;
+	}
+
+	if ((pre = findNode2(*ll, index-1))!= NULL)
+	{//not the first node
+		if (pre->next == NULL) return -1;
+		cur = pre->next;
+		pre->next=cur->next;
+		free(cur);
+		ll->size--;
+		return 0;
+	}
+
+	return -1;
+}
+
+
+```
+

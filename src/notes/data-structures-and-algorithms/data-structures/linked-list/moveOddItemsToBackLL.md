@@ -1,37 +1,21 @@
 ---
-title: Data Structures and Algorithms - Linked List - Assignments
-pageTitle: alternateMergeLinkedList()
+title: Data Structures and Algorithms - Linked List
+pageTitle: moveOddItemsToBackLL()
 ---
 
-## alternateMergeLinkedList() 
+## moveOddItemsToBackLL() 
 
 <span class="tags"><a href="#">Linked List</a></span>
 <span class="tags"><a href="#">Assignment</a></span>
 
 <hr>
 
-Write a C function <span class="functions">alternateMergeLinkedList()</span> which inserts nodes of the second list into alternate positions of the first list. The nodes of the second list should only be inserted when there are alternate positions available in the firstlist.
+Write a C function <span class="functions">moveOddItemsToBackLL()</span> that moves all the odd integersto the
+back of the linked list.
 <br><br>
-
 **The function prototype is given as follows:**
 
-<span class="functions">void alternateMergeLinkedList(LinkedList *ll1, LinkedList *ll2);</span>
-<br><br>
-For an example, assume that given two linked lists are LinkedList1 and LinkedList2:<br> 
-LinkedList1: **1 2 3** <br>
-LinkedList2: **4 5 6 7** <br>
-<br>
-The resulting linked lists are:<br> 
-LinkedList1: **1 4 2 5 3 6** <br>
-LinkedList2: **7** <br>
-<br>
-The second list should become empty when the first list is larger than the second list. For an example, assume that given two linked lists are LinkedList1 and LinkedList2:<br>
-LinkedList1: **1 5 7 3 9 11** <br>
-LinkedList2: **6 10 2 4** <br>
-<br>
-The resulting Linked Lists are: <br>
-LinkedList1: **1 6 5 10 7 2 3 4 9 11** <br>
-LinkedList2: **empty**
+<span class="functions">void moveOddItemsToBackLL(LinkedList *ll);</span>
 <br><br>
 <button id="openModalBtn">Click here for sample inputs/outputs</button>
 <div class="modal-wrapper" id="modal">
@@ -41,12 +25,17 @@ LinkedList2: **empty**
 		</div>
 		<div class="modal-body">
 			<p class="functions">
-			Linked list 1: 1 2 3 <br>
-            Linked list 2: 4 5 6 7 <br>
+			<bold>If the linked list is 2 3 4 7 15 18:</bold><br>
+            The resulting Linked List after moving odd integers to the back of the Linked List is: 2 4 18 3 7 15<br>
             <br>
-            Please input your choice(1/2/3/0): 3 <br>
-            Linked list 1: 1 4 2 5 3 6 <br>
-            Linked list 2: 7
+            <bold>If the linked list is 2 7 18 3 4 15:</bold><br>
+            The resulting Linked List after moving odd integers to the back of the Linked List is: 2 18 4 7 3 15<br>
+            <br>
+            <bold>If the current linked list is 1 3 5:</bold><br>
+            The resulting Linked List after moving odd integers to the back of the Linked List is: 1 3 5<br>
+            <br>
+            <bold>If the current linked list is 2 4 6:</bold><br>
+            The resulting Linked List after moving odd integers to the back of the Linked List is: 2 4 6
 			</p>
 		</div>
 		<div class="modal-footer">
@@ -78,69 +67,52 @@ typedef struct _linkedlist
 //////////////////////// function prototypes /////////////////////////////////////
 
 // You should not change the prototype of this function
-void alternateMergeLinkedList(LinkedList *ll1, LinkedList *ll2);
+void moveOddItemsToBackLL(LinkedList *ll);
 
 void printList(LinkedList *ll);
 void removeAllItems(LinkedList *ll);
-ListNode *findNode(LinkedList *ll, int index);
+ListNode * findNode(LinkedList *ll, int index);
 int insertNode(LinkedList *ll, int index, int value);
 int removeNode(LinkedList *ll, int index);
-
 
 //////////////////////////// main() //////////////////////////////////////////////
 
 int main()
 {
-	LinkedList ll1, ll2;
+	LinkedList ll;
 	int c, i, j;
 	c = 1;
 	//Initialize the linked list 1 as an empty linked list
-	ll1.head = NULL;
-	ll1.size = 0;
+	ll.head = NULL;
+	ll.size = 0;
 
-	//Initialize the linked list 2 as an empty linked list
-	ll2.head = NULL;
-	ll2.size = 0;
 
-	printf("1: Insert an integer to the linked list 1:\n");
-	printf("2: Insert an integer to the linked list 2:\n");
-	printf("3: Create the alternate merged linked list:\n");
+	printf("1: Insert an integer to the linked list:\n");
+	printf("2: Move all odd integers to the back of the linked list:\n");
 	printf("0: Quit:\n");
 
 	while (c != 0)
 	{
-		printf("Please input your choice(1/2/3/0): ");
+		printf("Please input your choice(1/2/0): ");
 		scanf("%d", &c);
 
 		switch (c)
 		{
 		case 1:
-			printf("Input an integer that you want to add to the linked list 1: ");
+			printf("Input an integer that you want to add to the linked list: ");
 			scanf("%d", &i);
-			j = insertNode(&ll1, ll1.size, i);
-			printf("Linked list 1: ");
-			printList(&ll1);
+			j = insertNode(&ll, ll.size, i);
+			printf("The resulting linked list is: ");
+			printList(&ll);
 			break;
 		case 2:
-			printf("Input an integer that you want to add to the linked list 2: ");
-			scanf("%d", &i);
-			j = insertNode(&ll2, ll2.size, i);
-			printf("Linked list 2: ");
-			printList(&ll2);
-			break;
-		case 3:
-		    printf("The resulting linked lists after merging the given linked list are:\n");
-			alternateMergeLinkedList(&ll1, &ll2); // You need to code this function
-			printf("The resulting linked list 1: ");
-			printList(&ll1);
-			printf("The resulting linked list 2: ");
-			printList(&ll2);
-			removeAllItems(&ll1);
-			removeAllItems(&ll2);
+			moveOddItemsToBackLL(&ll); // You need to code this function
+			printf("The resulting linked list after moving odd integers to the back of the linked list is: ");
+			printList(&ll);
+			removeAllItems(&ll);
 			break;
 		case 0:
-			removeAllItems(&ll1);
-			removeAllItems(&ll2);
+			removeAllItems(&ll);
 			break;
 		default:
 			printf("Choice unknown;\n");
@@ -152,26 +124,30 @@ int main()
 
 //////////////////////////////////////////////////////////////////////////////////
 
-void alternateMergeLinkedList(LinkedList *ll1, LinkedList *ll2)
+void moveOddItemsToBackLL(LinkedList *ll)
 {
 	/* add your code here */
-    int smallerSize, size1, size2;
     int i = 0;
-    int j = 0;
-	ListNode *ln;
+    int size = ll->size;
+    int lastPos;
+	ListNode *p;
+	lastPos = size;
 
-	size1 = ll1->size;
-	size2 = ll2->size;
-
-	smallerSize = (size1 < size2) ? size1 : size2;
-
-	while (i < smallerSize)
+	while (i < size)
     {
-        ln = findNode(ll2, 0);
-        insertNode(ll1, (i*2+1), ln->item);
-        removeNode(ll2, 0);
+        p = findNode(ll, i);
 
-        i++;
+        //if odd
+        if (p->item % 2 == 1)
+        {
+            insertNode(ll, lastPos, p->item);
+            removeNode(ll, i);
+            size--;
+        }
+        else
+        {
+            i++;
+        }
     }
 }
 
