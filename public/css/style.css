@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Carrois+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Almarai&display=swap');
 
 *{
   margin: 0;
@@ -6,7 +8,8 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  font-family: 'Josefin Sans', sans-serif;
+  /* font-family: 'Josefin Sans', sans-serif; */
+  font-family: 'Almarai', sans-serif;
 }
 
 body{
@@ -172,8 +175,8 @@ hr{
 }
 
 .functions{
-  font-family:monospace;
-  font-size: 1.2em;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1em;
   color: #404579;
 }
 
