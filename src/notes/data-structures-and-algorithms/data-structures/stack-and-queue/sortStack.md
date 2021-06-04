@@ -1,0 +1,340 @@
+---
+title: Data Structures and Algorithms - Stack & Queue
+pageTitle: sortStack()
+---
+
+## sortStack()
+
+<span class="tags"><a href="#">Stack & Queue</a></span>
+<span class="tags"><a href="#">Tutorial</a></span>
+
+<hr>
+
+Write a c function <span class="functions">sortStack()</span> that sorts a given stack in ascending order using another temporary stack. Note that the <span class="functions">sortStack()</span> function only uses <span class="functions">push()</span> and <span class="functions">pop()</span> when adding or removing integers from the stack.
+<br><br>
+
+**The function prototype is given as follows:**
+
+<span class="functions">void sortStack(Stack *s);</span>
+<br><br>
+**For example:** <br>
+if the stack is < 6, 5, 4, 3, 2, 1 >, the resulting stack will be < 1, 2, 3, 4, 5, 6 >
+<br><br>
+<button id="openModalBtn">Click here for sample inputs/outputs</button>
+<div class="modal-wrapper" id="modal">
+	<div class="modal">
+		<div class="modal-header">
+			<h3>Sample Inputs & Outputs</h3>
+		</div>
+		<div class="modal-body">
+			<p class="functions">
+1: Insert an integer into the stack;<br>
+2: Sort the stack in ascending order ;<br>
+0: Quit;<br>
+<br>
+Please input your choice(1/2/0): 1<br>
+Input an integer that you want to insert into the stack: 1<br>
+The resulting stack is: 1<br>
+Please input your choice(1/2/0): 1<br>
+Input an integer that you want to insert into the stack: 2<br>
+The resulting stack is: 2 1<br>
+Please input your choice(1/2/0): 1<br>
+Input an integer that you want to insert into the stack: 3<br>
+The resulting stack is: 3 2 1<br>
+Please input your choice(1/2/0): 1<br>
+Input an integer that you want to insert into the stack: 4<br>
+The resulting stack is: 4 3 2 1<br>
+Please input your choice(1/2/0): 1<br>
+Input an integer that you want to insert into the stack: 5<br>
+The resulting stack is: 5 4 3 2 1<br>
+Please input your choice(1/2/0): 1<br>
+Input an integer that you want to insert into the stack: 6<br>
+The resulting stack is: 6 5 4 3 2 1<br>
+Please input your choice(1/2/0): 2<br>
+The resulting stack after sorting it in ascending order is: 1 2 3 4 5 6<br>
+Please input your choice(1/2/0): 0
+			</p>
+		</div>
+		<div class="modal-footer">
+			<button id="closeModalBtn">Close</button>
+		</div>
+	</div>
+</div>
+<br>
+
+```c
+//////////////////////////////////////////////////////////////////////////////////
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+
+//////////////////////////////////   linked list /////////////////////////////////
+
+typedef struct _listnode{
+   int item;
+   struct _listnode *next;
+} ListNode;
+
+typedef struct _linkedlist{
+   int size;
+   ListNode *head;
+   ListNode *tail;
+} LinkedList;
+
+////////////////////////////////// stack    ///////////////////////////////////////////////////////
+
+typedef struct stack{
+	LinkedList ll;
+} Stack;
+
+//////////////////////////////////// queue ////////////////////////////////////////////////////////
+
+typedef struct _queue{
+	LinkedList ll;
+} Queue;
+
+///////////////////////// function prototypes ////////////////////////////////////
+
+// You should not change the prototypes of these functions
+void sortStack(Stack *s);
+
+void push(Stack *s, int item);
+int pop(Stack *s);
+int peek(Stack *s);
+int isEmptyStack(Stack *s);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+void printList(LinkedList *ll);
+ListNode * findNode(LinkedList *ll, int index);
+int insertNode(LinkedList *ll, int index, int value);
+int removeNode(LinkedList *ll, int index);
+void removeAllItems(LinkedList *ll);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+int main()
+{
+    int c, value;
+
+    Stack s;
+
+    //initialize the stack
+	s.ll.head =NULL;
+	s.ll.size =0;
+
+
+    c =1;
+
+    printf("1: Insert an integer into the stack;\n");
+    printf("2: Sort the stack in ascending order ;\n");
+    printf("0: Quit;\n");
+
+    while (c != 0)
+	{
+		printf("Please input your choice(1/2/0): ");
+		scanf("%d", &c);
+
+		switch (c)
+		{
+		case 1:
+			printf("Input an integer that you want to insert into the stack: ");
+			scanf("%d", &value);
+			push(&s, value);
+			printf("The resulting stack is: ");
+			printList(&(s.ll));
+			break;
+		case 2:
+			sortStack(&s); // You need to code this function
+			printf("The resulting stack after sorting it in ascending order is: ");
+			printList(&(s.ll));
+			removeAllItems(&(s.ll));
+			break;
+		case 0:
+			removeAllItems(&(s.ll));
+			break;
+		default:
+			printf("Choice unknown;\n");
+			break;
+		}
+	}
+
+    return 0;
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+void sortStack(Stack *s)
+{
+    int temp;
+    Stack ts;
+    ts.ll.head = NULL;
+    ts.ll.tail = NULL;
+    ts.ll.size = 0;
+
+    while(!isEmptyStack(s)){
+        push(&ts,pop(s));
+    }
+
+    while(!isEmptyStack(&ts)){
+        temp = pop(&ts);
+
+       while(!isEmptyStack(s) && peek(s) < temp){
+           push(&ts,pop(s));
+       }
+        push(s,temp);
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+void push(Stack *s, int item){
+   insertNode(&(s->ll), 0, item);
+}
+
+int pop(Stack *s){
+   int item;
+   if(!isEmptyStack(s)){
+    item = ((s->ll).head)->item;
+    removeNode(&(s->ll), 0);
+    return item;
+   }
+    return INT_MIN;
+}
+
+int peek(Stack *s){
+   return ((s->ll).head)->item;
+}
+
+int isEmptyStack(Stack *s){
+   if ((s->ll).size == 0)
+      return 1;
+   return 0;
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+
+void printList(LinkedList *ll){
+
+	ListNode *cur;
+	if (ll == NULL)
+		return;
+	cur = ll->head;
+
+	if (cur == NULL)
+		printf("Empty");
+	while (cur != NULL)
+	{
+		printf("%d ", cur->item);
+		cur = cur->next;
+	}
+	printf("\n");
+}
+
+ListNode * findNode(LinkedList *ll, int index){
+
+	ListNode *temp;
+
+	if (ll == NULL || index < 0 || index >= ll->size)
+		return NULL;
+
+	temp = ll->head;
+
+	if (temp == NULL || index < 0)
+		return NULL;
+
+	while (index > 0){
+		temp = temp->next;
+		if (temp == NULL)
+			return NULL;
+		index--;
+	}
+
+	return temp;
+}
+
+int insertNode(LinkedList *ll, int index, int value){
+
+	ListNode *pre, *cur;
+
+	if (ll == NULL || index < 0 || index > ll->size + 1)
+		return -1;
+
+	// If empty list or inserting first node, need to update head pointer
+	if (ll->head == NULL || index == 0){
+		cur = ll->head;
+		ll->head = malloc(sizeof(ListNode));
+		ll->head->item = value;
+		ll->head->next = cur;
+		ll->size++;
+		return 0;
+	}
+
+
+	// Find the nodes before and at the target position
+	// Create a new node and reconnect the links
+	if ((pre = findNode(ll, index - 1)) != NULL){
+		cur = pre->next;
+		pre->next = malloc(sizeof(ListNode));
+		pre->next->item = value;
+		pre->next->next = cur;
+		ll->size++;
+		return 0;
+	}
+
+	return -1;
+}
+
+
+int removeNode(LinkedList *ll, int index){
+
+	ListNode *pre, *cur;
+
+	// Highest index we can remove is size-1
+	if (ll == NULL || index < 0 || index >= ll->size)
+		return -1;
+
+	// If removing first node, need to update head pointer
+	if (index == 0){
+		cur = ll->head->next;
+		free(ll->head);
+		ll->head = cur;
+		ll->size--;
+
+		return 0;
+	}
+
+	// Find the nodes before and after the target position
+	// Free the target node and reconnect the links
+	if ((pre = findNode(ll, index - 1)) != NULL){
+
+		if (pre->next == NULL)
+			return -1;
+
+		cur = pre->next;
+		pre->next = cur->next;
+		free(cur);
+		ll->size--;
+		return 0;
+	}
+
+	return -1;
+}
+
+void removeAllItems(LinkedList *ll)
+{
+	ListNode *cur = ll->head;
+	ListNode *tmp;
+
+	while (cur != NULL){
+		tmp = cur->next;
+		free(cur);
+		cur = tmp;
+	}
+	ll->head = NULL;
+	ll->size = 0;
+}
+
+```
