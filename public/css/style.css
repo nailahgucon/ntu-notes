@@ -261,7 +261,7 @@ button:focus {
   display: flex;
   flex-flow: wrap;
   margin:auto;
-  width: 70%;
+  width: 80%;
 }
 
 .card {
@@ -270,7 +270,6 @@ button:focus {
   border: 0;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   color: #fff;
-  cursor: pointer;
   padding: 40px 15px;
   transition: all 0.1s ease-in-out;
   margin: auto;
@@ -281,6 +280,7 @@ button:focus {
  .card-a{
    color: #fff;
    text-decoration: none;
+   cursor: pointer;
  }
 
  .card-p{
