@@ -271,10 +271,10 @@ button:focus {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   color: #fff;
   cursor: pointer;
-  padding: 40px 5px;
+  padding: 40px 15px;
   transition: all 0.1s ease-in-out;
   margin: auto;
-  width: 250px;
+  width: 300px;
   text-align: center;
  }
 
