@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intro to Computational Thinking and Programming - employee</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/prism-coy-without-shadows.css">
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body>
+<main>
+<div class="wrapper">
+    <div class="sidebar">
+        <h2><a href="/" style="color:#fff;">Modules</a></h2>
+        <ul>
+            <li>
+            <a href="/notes/intro-to-comp-thinking-and-programming/c-programming/" class="modname">Intro to Computational Thinking & Programming</a>
+            </li>
+            <li>
+            <a href="/notes/data-structures-and-algorithms/" class="modname">Data Structures & Algorithms</a>
+            <a class="accordion"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/data-structures-and-algorithms/data-structures/" class="panel-a">Data Structures</a>
+            <a href="/notes/data-structures-and-algorithms/algorithms/" class="panel-a">Algorithms</a>
+            </div>
+            </li>
+            <li>
+            <a href="/notes/data-science-and-ai/" class="modname">Data Science & AI</a>
+            <a class="accordion"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/data-science-and-ai/data-science/" class="panel-a">Data Science</a>
+            <a href="/notes/data-science-and-ai/ai/" class="panel-a">Aritificial Intelligence</a>
+            </div>
+            </li>
+            <li>
+            <a href="/notes/computer-organization-and-architecture/" class="modname">Computer Organisation & Architecture</a>
+            <a class="accordion longmodname"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/computer-organization-and-architecture/first-half/" class="panel-a">First Half</a>
+            <a href="/notes/computer-organization-and-architecture/second-half/" class="panel-a">Second Half</a>
+            </div>
+            </li>
+            <li>
+            <a href="/notes/linear-algebra-for-computing/" class="modname">Linear Algebra for Computing</a>
+            <a class="accordion"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/linear-algebra-for-computing/labs/" class="panel-a">Labs</a>
+            <a href="/notes/linear-algebra-for-computing/written-notes/" class="panel-a">Written Notes</a>
+            </div>
+            </li>
+            <li>
+            <a href="/notes/manufacturing-processes/" class="modname">Manufacturing Processes</a>
+            <a class="accordion"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/manufacturing-processes/cheatsheets/" class="panel-a">Cheatsheets</a>
+            <a href="/notes/manufacturing-processes/written-notes/" class="panel-a">PDF Notes</a>
+            </div>
+            </li>
+        </ul> 
+    </div>
+    <div class="main_content">
+        
+        <a id="top"></a>
+        <div class="header">Nailah's Notes Blog<a href="/" id="home"><i class="fas fa-home"></i></a></div>
+        <div class="info">
+          <h2>employee()</h2>
+<p><span class="tags"><a href="#">Structures</a></span></p>
+<hr>
+<p>Write a C program that creates an array of structures to hold the employee information below:
+<br><br>
+<span class="functions">
+typedef struct {<br>
+    char name[40];<br>
+    char telno[40];<br>
+    int id;<br>
+    double salary;<br>
+} Employee;
+</span>
+<br><br>
+<strong>You are required to implement the following three functions:</strong>
+<br><br></p>
+<dl>
+<dd>- The function <span class="functions">readin()</span> reads a number of persons’ names and their corresponding telephone numbers, passes the data to the caller via the parameter <span class="functions">p</span>, and returns the number of names that have entered. The character <span class="functions">'#'</span> is used to indicate the end of user input.</dd>
+<dd>- The function <span class="functions">search()</span> allows the user to query the array using the name field. If the name is found, the program displays the message <span class="functions">“Employee found at index location: x”</span>. The function <span class="functions">search()</span> finds the employee data of an input name <span class="functions">target</span>, and then prints the name, telephone number, id and salary on the screen. If the input name cannot be found, then it will print the error message <span class="functions">“Name not found”</span> on the screen.</dd>
+<dd>- If the name is not found and the array is not full, the user can then add the name as a new record into the array. Assume that the maximum size of the array is 100. The function <span class="functions">addEmployee()</span> adds a new employee record into the array. The message <span class="functions">“Added at position: x”</span> will be printed. If the database is fill, an error message <span class="functions">“Database is full”</span> will be printed on the screen. The function returns the updated size of the array after
+adding the new employee record.</dd>
+</dl>
+<br>
+<p><strong>The prototypes of the functions are given below:</strong>
+<br>
+<span class="functions">int readin(Employee *emp);</span><br>
+<span class="functions">int search(Employee *emp, int size, char *target);</span><br>
+<span class="functions">int addEmployee(Employee *emp, int size, char *target);</span>
+<br><br></p>
+<p><button id="openModalBtn">Click here for sample inputs/outputs</button></p>
+<div class="modal-wrapper" id="modal">
+	<div class="modal">
+		<div class="modal-header">
+			<h3>Sample Inputs & Outputs</h3>
+		</div>
+		<div class="modal-body">
+			<p class="functions">
+			<bold>(1) Test Case 1:</bold><br>
+            Select one of the following options:<br>
+			1: readin()<br>
+			2: search()<br>
+			3: addEmployee()<br>
+			4: print()<br>
+			5: exit()<br>
+			Enter your choice: 1<br>
+			Enter name: Hui Siu Cheung<br>
+			Enter tel: 12345678<br>
+			Enter id: 11<br>
+			Enter salary: 123.45<br>
+			Enter name: #<br>
+			Enter your choice: 4<br>
+			The current employee list:<br>
+			Hui Siu Cheung 12345678 11 123.45<br>
+			Enter your choice: 5<br>
+			<br>
+			<bold>(2) Test Case 2:</bold><br>
+			Select one of the following options:<br>
+			1: readin()<br>
+			2: search()<br>
+			3: addEmployee()<br>
+			4: print()<br>
+			5: exit()<br>
+			Enter your choice: 1<br>
+			Enter name: Hui Siu Cheung<br>
+			Enter tel: 12345678<br>
+			Enter id: 11<br>
+			Enter salary: 123.45<br>
+			Enter name: Kenny B<br>
+			Enter tel: 23456789<br>
+			Enter id: 12<br>
+			Enter salary: 1234.45<br>
+			Enter name: #<br>
+			Enter your choice: 4<br>
+			The current employee list:<br>
+			Hui Siu Cheung 12345678 11 123.45<br>
+			Kenny B 23456789 12 1234.45<br>
+			Enter your choice: 2<br>
+			Enter search name: Kenny B<br>
+			Employee found at index location: 1<br>
+			Kenny B 23456789 12 1234.45<br>
+			Enter your choice: 5<br>
+			<br>
+			<bold>(3) Test Case 3:</bold><br>
+			Select one of the following options:<br>
+			1: readin()<br>
+			2: search()<br>
+			3: addEmployee()<br>
+			4: print()<br>
+			5: exit()<br>
+			Enter your choice: 1<br>
+			Enter name: Hui Siu Cheung<br>
+			Enter tel: 12345678<br>
+			Enter id: 11<br>
+			Enter salary: 123.45<br>
+			Enter name: Kenny B<br>
+			Enter tel: 23456789<br>
+			Enter id: 12<br>
+			Enter salary: 1234.45<br>
+			Enter name: #<br>
+			Enter your choice: 4<br>
+			The current employee list:<br>
+			Hui Siu Cheung 12345678 11 123.45<br>
+			Kenny B 23456789 12 1234.45<br>
+			Enter your choice: 2<br>
+			Enter search name: Kenny BB<br>
+			Name not found!<br>
+			Enter your choice: 5<br>
+			<br>
+			<bold>(4) Test Case 4:</bold><br>
+			Select one of the following options:<br>
+			1: readin()<br>
+			2: search()<br>
+			3: addEmployee()<br>
+			4: print()<br>
+			5: exit()<br>
+			Enter your choice: 1<br>
+			Enter name: Hui Siu Cheung<br>
+			Enter tel: 12345678<br>
+			Enter id: 11<br>
+			Enter salary: 123.45<br>
+			Enter name: Kenny B<br>
+			Enter tel: 23456789<br>
+			Enter id: 12<br>
+			Enter salary: 1234.45<br>
+			Enter name: #<br>
+			Enter your choice: 4<br>
+			The current employee list:<br>
+			Hui Siu Cheung 12345678 11 123.45<br>
+			Kenny B 23456789 12 1234.45<br>
+			Enter your choice: 3<br>
+			Enter new name: Kenny Tan<br>
+			Enter tel: 12344321<br>
+			Enter id: 13<br>
+			Enter salary: 2345.67<br>
+			Added at position: 2<br>
+			Enter your choice: 4<br>
+			The current employee list:<br>
+			Hui Siu Cheung 12345678 11 123.45<br>
+			Kenny B 23456789 12 1234.45<br>
+			Kenny Tan 12344321 13 2345.67<br>
+			Enter your choice: 5
+			</p>
+		</div>
+		<div class="modal-footer">
+			<button id="closeModalBtn">Close</button>
+		</div>
+	</div>
+</div>
+<br>
+<pre class="language-c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;string.h></span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">MAX</span> <span class="token expression"><span class="token number">100</span></span></span><br><br><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token punctuation">{</span><br>	<span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">40</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>	<span class="token keyword">char</span> telno<span class="token punctuation">[</span><span class="token number">40</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br>	<span class="token keyword">int</span> id<span class="token punctuation">;</span><br>	<span class="token keyword">double</span> salary<span class="token punctuation">;</span><br><span class="token punctuation">}</span> Employee<span class="token punctuation">;</span><br><br><span class="token keyword">void</span> <span class="token function">printEmp</span><span class="token punctuation">(</span>Employee <span class="token operator">*</span>emp<span class="token punctuation">,</span> <span class="token keyword">int</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">int</span> <span class="token function">readin</span><span class="token punctuation">(</span>Employee <span class="token operator">*</span>emp<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">int</span> <span class="token function">search</span><span class="token punctuation">(</span>Employee <span class="token operator">*</span>emp<span class="token punctuation">,</span> <span class="token keyword">int</span> size<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span><br><span class="token keyword">int</span> <span class="token function">addEmployee</span><span class="token punctuation">(</span>Employee <span class="token operator">*</span>emp<span class="token punctuation">,</span> <span class="token keyword">int</span> size<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><br>	Employee emp<span class="token punctuation">[</span>MAX<span class="token punctuation">]</span><span class="token punctuation">;</span><br>	<span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">40</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">*</span>p<span class="token punctuation">;</span><br>	<span class="token keyword">int</span> size<span class="token punctuation">,</span> choice<span class="token punctuation">,</span> result<span class="token punctuation">;</span><br><br>	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Select one of the following options: \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"1: readin() \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"2: search() \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"3: addEmployee() \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"4: print() \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"5: exit() \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token keyword">do</span> <span class="token punctuation">{</span><br>		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Enter your choice: \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>		<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>choice<span class="token punctuation">)</span><span class="token punctuation">;</span><br>		<span class="token keyword">switch</span> <span class="token punctuation">(</span>choice<span class="token punctuation">)</span> <span class="token punctuation">{</span><br>			<span class="token keyword">case</span> <span class="token number">1</span><span class="token operator">:</span><br>				size <span class="token operator">=</span> <span class="token function">readin</span><span class="token punctuation">(</span>emp<span class="token punctuation">)</span><span class="token punctuation">;</span><br>				<span class="token keyword">break</span><span class="token punctuation">;</span><br>			<span class="token keyword">case</span> <span class="token number">2</span><span class="token operator">:</span><br>				<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Enter search name: \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>				<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>				<span class="token function">fgets</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token constant">stdin</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>				<span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token operator">=</span><span class="token function">strchr</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token string">'\0'</span><span class="token punctuation">;</span><br>				result <span class="token operator">=</span> <span class="token function">search</span><span class="token punctuation">(</span>emp<span class="token punctuation">,</span>size<span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span><br>				<span class="token keyword">if</span> <span class="token punctuation">(</span>result <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">)</span><br>				<span class="token function">printf</span> <span class="token punctuation">(</span><span class="token string">"Name not found! \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>				<span class="token keyword">break</span><span class="token punctuation">;</span><br>			<span class="token keyword">case</span> <span class="token number">3</span><span class="token operator">:</span><br>				<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Enter new name: \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>				<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>				<span class="token function">fgets</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">,</span> <span class="token constant">stdin</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>				<span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token operator">=</span><span class="token function">strchr</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token string">'\0'</span><span class="token punctuation">;</span><br>				result <span class="token operator">=</span> <span class="token function">search</span><span class="token punctuation">(</span>emp<span class="token punctuation">,</span>size<span class="token punctuation">,</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span><br>				<span class="token keyword">if</span> <span class="token punctuation">(</span>result <span class="token operator">!=</span> <span class="token number">1</span><span class="token punctuation">)</span><br>					size <span class="token operator">=</span> <span class="token function">addEmployee</span><span class="token punctuation">(</span>emp<span class="token punctuation">,</span> size<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">;</span><br>				<span class="token keyword">else</span><br>					<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"The new name has already existed in the database\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>				<span class="token keyword">break</span><span class="token punctuation">;</span><br>			<span class="token keyword">case</span> <span class="token number">4</span><span class="token operator">:</span><br>				<span class="token function">printEmp</span><span class="token punctuation">(</span>emp<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span><br>				<span class="token keyword">break</span><span class="token punctuation">;</span><br>			<span class="token keyword">default</span><span class="token operator">:</span><br>				<span class="token keyword">break</span><span class="token punctuation">;</span><br>		<span class="token punctuation">}</span><br>	<span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>choice <span class="token operator">&lt;</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">void</span> <span class="token function">printEmp</span><span class="token punctuation">(</span>Employee <span class="token operator">*</span>emp<span class="token punctuation">,</span> <span class="token keyword">int</span> size<span class="token punctuation">)</span><span class="token punctuation">{</span><br>	<span class="token keyword">int</span> i<span class="token punctuation">;</span><br>	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"The current employee list: \n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token keyword">if</span> <span class="token punctuation">(</span>size<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><br>		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Empty array\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token keyword">else</span><span class="token punctuation">{</span><br>	<span class="token keyword">for</span> <span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><br>		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s %s %d %.2f\n"</span><span class="token punctuation">,</span>emp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span>emp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>telno<span class="token punctuation">,</span>emp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> emp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>salary<span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token punctuation">}</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">int</span> <span class="token function">readin</span><span class="token punctuation">(</span>Employee <span class="token operator">*</span>emp<span class="token punctuation">)</span><span class="token punctuation">{</span><br>	<span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span><br><br>	<span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Enter name:\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token function">gets</span><span class="token punctuation">(</span>emp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>	<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>emp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token string">"#"</span> <span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span><br>        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Enter tel:\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        <span class="token function">gets</span><span class="token punctuation">(</span>emp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>telno<span class="token punctuation">)</span><span class="token punctuation">;</span><br>        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Enter id:\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>emp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span><br>        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Enter salary:\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%lf"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>emp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>salary<span class="token punctuation">)</span><span class="token punctuation">;</span><br>        i<span class="token operator">++</span><span class="token punctuation">;</span><br>        <span class="token function">getchar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Enter name:\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>        <span class="token function">gets</span><span class="token punctuation">(</span>emp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token punctuation">}</span><br>	<span class="token keyword">return</span> i<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">int</span> <span class="token function">search</span><span class="token punctuation">(</span>Employee <span class="token operator">*</span>emp<span class="token punctuation">,</span> <span class="token keyword">int</span> size<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>target<span class="token punctuation">)</span><span class="token punctuation">{</span><br>	<span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br><br>	<span class="token keyword">if</span><span class="token punctuation">(</span>size <span class="token operator">></span> MAX<span class="token punctuation">)</span><br>		<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><br><br>	<span class="token keyword">for</span><span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span><br>    	<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">strcmp</span><span class="token punctuation">(</span>emp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> target<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span><br>        	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Employee found at index location: %d\n"</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span><br>        	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s %s %d %.2lf\n"</span><span class="token punctuation">,</span> emp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> emp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>telno<span class="token punctuation">,</span> emp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">,</span> emp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>salary<span class="token punctuation">)</span><span class="token punctuation">;</span><br>        	<span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span><br>       <span class="token punctuation">}</span><br>	<span class="token punctuation">}</span><br>	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token keyword">int</span> <span class="token function">addEmployee</span><span class="token punctuation">(</span>Employee <span class="token operator">*</span>emp<span class="token punctuation">,</span> <span class="token keyword">int</span> size<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>target<span class="token punctuation">)</span><span class="token punctuation">{</span><br>	<span class="token keyword">if</span><span class="token punctuation">(</span>size <span class="token operator">></span> MAX<span class="token punctuation">)</span><br>		size <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><br>	<span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>size <span class="token operator">==</span> MAX<span class="token punctuation">)</span><span class="token punctuation">{</span><br>		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Database is full"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>		<span class="token keyword">return</span> size<span class="token punctuation">;</span><br>	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span><br>		<span class="token function">strcpy</span><span class="token punctuation">(</span>emp<span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> target<span class="token punctuation">)</span><span class="token punctuation">;</span><br>		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Enter tel:\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>		<span class="token function">gets</span><span class="token punctuation">(</span>emp<span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">.</span>telno<span class="token punctuation">)</span><span class="token punctuation">;</span><br>		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Enter id:\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>		<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>emp<span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span><br>		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Enter salary:\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>		<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%lf"</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>emp<span class="token punctuation">[</span>size<span class="token punctuation">]</span><span class="token punctuation">.</span>salary<span class="token punctuation">)</span><span class="token punctuation">;</span><br>		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Added at position: %d\n"</span><span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span><br>		<span class="token keyword">return</span> <span class="token operator">++</span>size<span class="token punctuation">;</span><br>	<span class="token punctuation">}</span><br><span class="token punctuation">}</span></code></pre>
+
+        <div class="back-to-top tags"><a href="#top">Back to top</a></div>
+      </div>
+
+      
+    </div>
+</div>
+</main>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+const openBtn = document.getElementById('openModalBtn');
+const closeBtn = document.getElementById('closeModalBtn');
+const modal = document.getElementById('modal');
+
+openBtn.addEventListener('click', () => {
+	modal.classList.add('open');
+});
+
+closeBtn.addEventListener('click', () => {
+	modal.classList.remove('open');
+});
+</script>
+
+</body>
+</html>
