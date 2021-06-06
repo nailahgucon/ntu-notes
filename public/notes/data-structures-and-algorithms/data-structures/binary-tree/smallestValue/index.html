@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Structures and Algorithms</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/prism-coy-without-shadows.css">
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+</head>
+<body>
+<main>
+<div class="wrapper">
+    <div class="sidebar">
+        <h2><a href="/" style="color:#fff;">Modules</a></h2>
+        <ul>
+            <li>
+            <a href="/notes/intro-to-comp-thinking-and-programming/c-programming/" class="modname">Intro to Computational Thinking & Programming</a>
+            </li>
+            <li>
+            <a href="/notes/data-structures-and-algorithms/" class="modname">Data Structures & Algorithms</a>
+            <a class="accordion"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/data-structures-and-algorithms/data-structures/" class="panel-a">Data Structures</a>
+            <a href="/notes/data-structures-and-algorithms/algorithms/" class="panel-a">Algorithms</a>
+            </div>
+            </li>
+            <li>
+            <a href="/notes/data-science-and-ai/" class="modname">Data Science & AI</a>
+            <a class="accordion"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/data-science-and-ai/data-science/" class="panel-a">Data Science</a>
+            <a href="/notes/data-science-and-ai/ai/" class="panel-a">Aritificial Intelligence</a>
+            </div>
+            </li>
+            <li>
+            <a href="/notes/computer-organization-and-architecture/" class="modname">Computer Organisation & Architecture</a>
+            <a class="accordion longmodname"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/computer-organization-and-architecture/first-half/" class="panel-a">First Half</a>
+            <a href="/notes/computer-organization-and-architecture/second-half/" class="panel-a">Second Half</a>
+            </div>
+            </li>
+            <li>
+            <a href="/notes/linear-algebra-for-computing/" class="modname">Linear Algebra for Computing</a>
+            <a class="accordion"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/linear-algebra-for-computing/labs/" class="panel-a">Labs</a>
+            <a href="/notes/linear-algebra-for-computing/written-notes/" class="panel-a">Written Notes</a>
+            </div>
+            </li>
+            <li>
+            <a href="/notes/manufacturing-processes/" class="modname">Manufacturing Processes</a>
+            <a class="accordion"><i class="fas fa-chevron-down"></i></a>
+            <div class="panel" style="display:none;">
+            <a href="/notes/manufacturing-processes/cheatsheets/" class="panel-a">Cheatsheets</a>
+            <a href="/notes/manufacturing-processes/written-notes/" class="panel-a">PDF Notes</a>
+            </div>
+            </li>
+        </ul> 
+    </div>
+    <div class="main_content">
+        
+        <a id="top"></a>
+        <div class="header">Nailah's Notes Blog<a href="/" id="home"><i class="fas fa-home"></i></a></div>
+        <div class="info">
+          <h2>smallestValue()</h2>
+<p><span class="tags"><a href="#">Binary Tree</a></span>
+<span class="tags"><a href="#">Lab</a></span></p>
+<hr>
+<p>Write a function <span class="functions">smallestValue()</span> that returns the smallest value stored in a given tree. The function accepts a pointer to the root of the given tree.
+<br><br></p>
+<p><strong>The function prototype is given as follows:</strong></p>
+<p><span class="functions">int smallestValue(BTNode *node);</span>
+<br></p>
+<pre class="language-c"><code class="language-c"><span class="token comment">//#define _CRT_SECURE_NO_WARNINGS</span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span><br><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span><br><br><span class="token comment">////////////////////////////////////////////////////////////////////</span><br><br><br><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token class-name">_btnode</span><span class="token punctuation">{</span><br><span class="token keyword">int</span> item<span class="token punctuation">;</span><br><span class="token keyword">struct</span> <span class="token class-name">_btnode</span> <span class="token operator">*</span>left<span class="token punctuation">;</span><br><span class="token keyword">struct</span> <span class="token class-name">_btnode</span> <span class="token operator">*</span>right<span class="token punctuation">;</span><br><br><span class="token punctuation">}</span> BTNode<span class="token punctuation">;</span><br><br><span class="token comment">////////////////////////////////////////////////////////////////////</span><br><br><span class="token keyword">int</span> <span class="token function">smallestValue</span><span class="token punctuation">(</span>BTNode <span class="token operator">*</span>node<span class="token punctuation">)</span><span class="token punctuation">;</span><br><br><span class="token comment">////////////////////////////////////////////////////////////////////</span><br><br><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span> argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span><br><br>	<span class="token keyword">int</span> i<span class="token punctuation">;</span><br>	<span class="token comment">//char reply;</span><br><br>	BTNode <span class="token operator">*</span>root<span class="token punctuation">,</span> <span class="token operator">*</span>root2<span class="token punctuation">;</span><br>	BTNode btn<span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">]</span><span class="token punctuation">;</span><br><br>	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"The smallest value in the tree is %d:\n"</span><span class="token punctuation">,</span> <span class="token function">smallestValue</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br><br>	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><br>	<span class="token comment">//printf("\nenter any key to exit:");</span><br>	<span class="token comment">//fflush(stdin);</span><br>	<span class="token comment">//scanf("%c", &amp;reply);</span><br><span class="token punctuation">}</span><br><br><span class="token comment">//////////////////////////////////////////////////////////////////////////////////////////////////</span><br><br><span class="token keyword">int</span> <span class="token function">smallestValue</span><span class="token punctuation">(</span>BTNode <span class="token operator">*</span>node<span class="token punctuation">)</span><br><span class="token punctuation">{</span><br>	<span class="token keyword">int</span> l<span class="token punctuation">,</span>r<span class="token punctuation">;</span><br>	<span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token operator">==</span><span class="token constant">NULL</span><span class="token punctuation">)</span><br>		<span class="token keyword">return</span> <span class="token number">100000</span><span class="token punctuation">;</span><br><br>	l<span class="token operator">=</span><span class="token function">smallestValue</span><span class="token punctuation">(</span>node<span class="token operator">-></span>left<span class="token punctuation">)</span><span class="token punctuation">;</span><br>	r<span class="token operator">=</span><span class="token function">smallestValue</span><span class="token punctuation">(</span>node<span class="token operator">-></span>right<span class="token punctuation">)</span><span class="token punctuation">;</span><br>	<span class="token keyword">if</span> <span class="token punctuation">(</span>l<span class="token operator">&lt;</span>node<span class="token operator">-></span>item <span class="token operator">&amp;&amp;</span> l<span class="token operator">&lt;</span>r<span class="token punctuation">)</span><br>		<span class="token keyword">return</span> l<span class="token punctuation">;</span><br>	<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>r<span class="token operator">&lt;</span>node<span class="token operator">-></span>item <span class="token operator">&amp;&amp;</span> r<span class="token operator">&lt;</span>l<span class="token punctuation">)</span><br>		<span class="token keyword">return</span> r<span class="token punctuation">;</span><br>	<span class="token keyword">else</span> <span class="token keyword">return</span> node<span class="token operator">-></span>item<span class="token punctuation">;</span><br><span class="token punctuation">}</span><br><br><span class="token comment">///////////////////////////////////////////////////////////////////////////////////////////////////</span></code></pre>
+
+        <div class="back-to-top tags"><a href="#top">Back to top</a></div>
+      </div>
+
+      
+    </div>
+</div>
+</main>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+const openBtn = document.getElementById('openModalBtn');
+const closeBtn = document.getElementById('closeModalBtn');
+const modal = document.getElementById('modal');
+
+openBtn.addEventListener('click', () => {
+	modal.classList.add('open');
+});
+
+closeBtn.addEventListener('click', () => {
+	modal.classList.remove('open');
+});
+</script>
+
+</body>
+</html>
