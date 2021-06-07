@@ -13,7 +13,7 @@ Cipher text is a popular encryption technique. What we do in cipher text is that
 <br><br>
 <strong>Write the C functions <span class="functions">cipher()</span> and <span class="functions">decipher()</span> with the following function prototypes:</strong>
 <br>
-<span class="functions">void cipher(char *s);</span>
+<span class="functions">void cipher(char *s);</span><br>
 <span class="functions">void decipher(char *s);</span>
 <br><br>
 <button id="openModalBtn">Click here for sample inputs/outputs</button>
