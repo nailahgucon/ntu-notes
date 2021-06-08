@@ -2,7 +2,7 @@
 title: Intro to Computational Thinking and Programming
 ---
 
-## weomce to ICT
+## Introduction to Computational Thinking and Programming
 <br>
 <div class="card-div">
 {%- for post in collections.ICTP-code -%}
