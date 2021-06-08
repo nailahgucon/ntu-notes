@@ -1,40 +1,37 @@
 ---
 title: Data Structures and Algorithms
-pageTitle: preOrderIterative()
+pageTitle: postOrderIterativeS2()
 ---
 
-## preOrderIterative()
+## postOrderIterativeS2()
 
-<span class="tags"><a href="#">Binary Tree</a></span>
-<span class="tags"><a href="#">Tutorial</a></span>
+<span class="tags"><a href="#">Binary Search Tree</a></span>
+<span class="tags"><a href="#">Assignment</a></span>
 
 <hr>
 
-Write an iterative C function <span class="functions">preOrderIterative()</span> that prints the pre-order traversal of a binary search tree using a **stack**. Note that you should **only** use <span class="functions">push()</span> or <span class="functions">pop()</span> operations when you add or remove integers from the stack. Remember to empty the stack at the beginning, if the stack is not empty.
+Write an iterative C function <span class="functions">postOrderIterativeS2()</span> that prints the post-order traversal of a binary search tree using two stacks. Note that you should only use <span class="functions">push()</span> or <span class="functions">pop()</span> operations when you add or remove integers from the stacks. Remember to empty the stacks at the beginning, if the stacks are not empty.
 <br><br>
 
 **The function prototype is given as follows:**
 
-<span class="functions">void preOrderIterative(BSTNode *root);</span>
+<span class="functions">void postOrderIterativeS2(BSTNode *root);</span>
 <br><br>
-
 **Following is the detailed algorithm:**
 
 <span class="functions">
-1) Create an empty stack nodeStack and push root node to stack.<br>
-2) Do following while nodeStack is not empty.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;a) Pop an item from stack and print it.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;b) Push right child of popped item to stack<br>
-&nbsp;&nbsp;&nbsp;&nbsp;c) Push left child of popped item to stack<br>
-<br>
-&nbsp;&nbsp;Right child is pushed before left child to make sure that left subtree is processed first.
+1) Push root to first stack.<br>
+2) Loop while first stack is not empty<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.1) Pop a node from first stack and push it to second stack<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2.2) Push left and right children of the popped node to first stack<br>
+3) Print contents of second stack
 </span>
 <br><br>
-<img src = "{{ '/images/binary-tree-preorderiterative.JPG' | url }}" class="diagrams">
+
+**Let us consider the below tree for example.**<br>
+<img src = "{{ '/images/binary-search-tree-postorderiteratives2.JPG' | url }}" class="diagrams">
 <br><br>
-
-Preorder Tree Traversal: **20 15 10 18 50 25 80**
-
+Iterative Postorder Traversal: **10 18 15 25 80 50 20**
 <br>
 
 ```c
@@ -64,11 +61,10 @@ typedef struct _stack
 ///////////////////////// function prototypes ////////////////////////////////////
 
 // You should not change the prototypes of these functions
-void preOrderIterative(BSTNode *root);
+void postOrderIterativeS2(BSTNode *root);
 
 void insertBSTNode(BSTNode **node, int value);
 
-// You may use the following functions or you may write your own
 void push(Stack *stack, BSTNode *node);
 BSTNode *pop(Stack *s);
 BSTNode *peek(Stack *s);
@@ -87,7 +83,7 @@ int main()
 	root = NULL;
 
 	printf("1: Insert an integer into the binary search tree;\n");
-	printf("2: Print the pre-order traversal of the binary search tree;\n");
+	printf("2: Print the post-order traversal of the binary search tree;\n");
 	printf("0: Quit;\n");
 
 
@@ -104,8 +100,8 @@ int main()
 			insertBSTNode(&root, i);
 			break;
 		case 2:
-			printf("The resulting pre-order traversal of the binary search tree is: ");
-			preOrderIterative(root); // You need to code this function
+			printf("The resulting post-order traversal of the binary search tree is: ");
+			postOrderIterativeS2(root); // You need to code this function
 			printf("\n");
 			break;
 		case 0:
@@ -123,29 +119,31 @@ int main()
 
 //////////////////////////////////////////////////////////////////////////////////
 
-void preOrderIterative(BSTNode *root)
+void postOrderIterativeS2(BSTNode *root)
 {
-	Stack s;
-	BSTNode *temp;
+	 /* add your code here */
+	 Stack s1;
+	 Stack s2;
+	 s1.top = NULL;
+	 s2.top = NULL;
+	 BSTNode *temp = root;
 
-	s.top = NULL;
-	temp = root;
-
-	if (temp == NULL)
-		return;
-    push(&s, temp);
-
-	do
-	{
-	    temp = pop(&s);
-	    printf("%d ",temp->item);
-
-	    if(temp->right != NULL)
-            push(&s,temp->right);
-        if(temp->left != NULL)
-            push(&s,temp->left);
-
-	} while (!isEmpty(&s));
+	 if (temp != NULL)
+     {
+         push(&s1,temp);
+         while(!isEmpty(&s1)){
+            temp = pop(&s1);
+            push(&s2,temp);
+            if (temp->right!=NULL)
+                push(&s1,temp->right);
+            if (temp->left!=NULL)
+                push(&s1,temp->left);
+         }
+         while(!isEmpty(&s2)){
+            temp = pop(&s2);
+            printf("%d ",temp->item);
+         }
+     }
 }
 
 ///////////////////////////////////////////////////////////////////////////////

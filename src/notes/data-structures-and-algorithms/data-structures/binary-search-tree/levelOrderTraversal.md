@@ -5,7 +5,7 @@ pageTitle: levelOrderTraversal()
 
 ## levelOrderTraversal()
 
-<span class="tags"><a href="#">Binary Tree</a></span>
+<span class="tags"><a href="#">Binary Search Tree</a></span>
 <span class="tags"><a href="#">Tutorial</a></span>
 
 <hr>
