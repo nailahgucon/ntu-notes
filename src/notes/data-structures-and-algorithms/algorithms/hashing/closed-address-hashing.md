@@ -7,11 +7,10 @@ pageTitle: Closed Address Hashing
 
 <span class="tags"><a href="#">Hashing</a></span>
 <span class="tags"><a href="#">Assignment</a></span>
-<span class="tags"><a href="#">Lab 6 Q4</a></span>
 
 <hr>
 
-Modify the closed addressing hash table in Lab 6 Question 4 to perform insertion and deletion by using a doubly linked list below.
+Implement a closed addressing hash table to perform insertion and deletion by using a doubly linked list below.
 <br><br>
 <span class="functions">
 typedef struct _listnode {<br>
