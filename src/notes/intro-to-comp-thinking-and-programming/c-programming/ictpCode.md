@@ -9,12 +9,37 @@ pageTitle: More Code done in ICTP
 <br><br>
 
 **Jump to:** 
+<span class="tags"><a href="#control-flow">Control Flow</a></span>
 <span class="tags"><a href="#arrays">Arrays</a></span>
 <span class="tags"><a href="#character-strings">Character Strings</a></span>
 <span class="tags"><a href="#functions-and-pointers">Functions & Pointers</a></span>
 <span class="tags"><a href="#structures">Structures</a></span>
 <hr>
 <br>
+<a id="control-flow"></a>
+<h3 style="text-align:center">Control Flow</h3><br>
+<span class="functions">grade</span>
+
+```c
+// main()
+int studentNumber=0, mark;
+printf("Enter ID:\n");
+scanf("%d", &studentNumber);
+while(studentNumber != -1){
+    if mark >= 75){
+        printf("grade = A\n");
+    }
+    // continue with grade = B to E...
+    else{
+        printf("grade = F\n");
+    }
+    printf("StudentID:");
+    scanf("%d",&studentNumber);
+}
+return c;
+```
+<br><br>
+<!--- //////////////////////////////// MD Separator ////////////////////////////////////////// -->
 <a id="arrays"></a>
 <h3 style="text-align:center">Arrays</h3><br>
 <span class="functions">functionnamehere</span>
