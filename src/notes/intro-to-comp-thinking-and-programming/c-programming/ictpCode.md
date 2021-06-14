@@ -18,7 +18,7 @@ pageTitle: More Code done in ICTP
 <br>
 <a id="control-flow"></a>
 <h3 style="text-align:center">Control Flow</h3><br>
-<span class="functions">grade</span>
+<span class="functions">grade()</span>
 
 ```c
 // main()
