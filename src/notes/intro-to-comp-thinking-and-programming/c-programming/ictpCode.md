@@ -323,10 +323,29 @@ return count;
 <!--- //////////////////////////////// MD Separator ////////////////////////////////////////// -->
 <a id="structures"></a>
 <h3 style="text-align:center">Structures</h3><br>
-<span class="functions">functionnamehere</span>
+<span class="functions">CircleIntersect()</span>
 
 ```c
-// insert code here
+// Intersect()
+// Parameters: struct circle c1, struct circle c2
+
+double a, b;
+int result;
+
+a = c1.x - c2.x;
+b = c1.y - c2.y;
+
+return (sqrt(a*a + b*b) <= (c1.radius + c2.radius));
+
+// Contain()
+// Parameters: struct circle *c1, struct *circle c2
+
+double a, b;
+
+a = c1->x - c2->x;
+b = c1->y - c2->y;
+
+return (c1->radius >= (c2->radius + sqrt(a*a + b*b))); 
 ```
 <span class="functions">functionnamehere2</span>
 
