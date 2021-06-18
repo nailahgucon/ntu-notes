@@ -152,52 +152,189 @@ for(i = 0; i < colSize; i++){
 }
 ```
 
-<span class="functions">functionnamehere2</span>
+<span class="functions">symmetry2D()</span>
 
 ```c
-// Parameters: 
+// Parameters: M[][SIZE], int rowSize, int colSize
+int i, j, result = 1;
+for(i = 0; i < rowSize; i++){
+    for(j = 0; j < colSize; j++){
+        if(M[i][j] != M[j][i]){
+            result = 0;
+            break;
+        }
+    }
+}
+return result;
 ```
 
-<span class="functions">functionnamehere2</span>
+<span class="functions">swapMinMax1D()</span>
 
 ```c
-// Parameters: 
+// Parameters: ar[], size
+int min, max, temp, i;
+min = 0;
+max = 1;
+if(ar[min] > ar[max]){
+    temp = max;
+    max = min;
+    min = temp;
+}
+for(i = 2; i < size; i++){
+    if(ar[i] >= ar[max]){
+        max = i;
+    } else if(ar[i] <= ar[min]){
+        min = i;
+    }
+}
+temp = ar[max];
+ar[max] = ar[min];
+ar[min] = temp;
 ```
 
-<span class="functions">functionnamehere2</span>
+<span class="functions">computeTotal2D()</span>
 
 ```c
-// Parameters: 
+// set hardcoded (4x4) 2D array
+// Parameters: float matrix[4][4]
+float average1 = (matrix[0][0] + matrix[0][1] + matrix[0][2])/3;
+float average2 = (matrix[1][0] + matrix[1][1] + matrix[1][2])/3;
+float average3 = (matrix[2][0] + matrix[2][1] + matrix[2][2])/3;
+float average4 = (matrix[3][0] + matrix[3][1] + matrix[3][2])/3;
+
+matrix[0][3] = average1;
+matrix[1][3] = average2;
+matrix[2][3] = average3;
+matrix[3][3] = average4;
 ```
 
-<span class="functions">functionnamehere2</span>
+<span class="functions">SpecialNumbers1D()</span>
 
 ```c
-// Parameters: 
+// Parameters: int ar[], int num, int *size
+int i = 100;
+int a, b, c;
+double sum = 0;
+
+for(i = 100; i <= num; i++){
+    a = (i/10)/10; //first number 
+    b = (i/10)%10; //second number 
+    c = i%10; //third number 
+    sum = a*a*a + b*b*b + c*c*c;
+    if(sum == i){
+        ar[*size] = sum;
+        ++(*size);
+    }
+}
 ```
 
-<span class="functions">functionnamehere2</span>
+<span class="functions">findMinMax1D()</span>
 
 ```c
-// Parameters: 
+// Parameters: ar[], size, *min, *max
+int temp;
+
+if(size == 1){
+    *max = ar[0];
+    *min = ar[0];
+}else{
+    *max = ar[0];
+    *min = ar[1];
+    if(*max < *min){
+        temp = *max;
+        *max = *min;
+        *min = temp;
+    }
+    for(i = 2; i < size; i++){
+        if(a[i] > *max){
+            *max = a[i];
+        }else if(a[i] < *min){
+            *min = a[i];
+        }
+    }
+}
 ```
 
-<span class="functions">functionnamehere2</span>
+<span class="functions">find2Max1D()</span>
 
 ```c
-// Parameters: 
+// Parameters: ar[], size, *max1, *max2
+int i = 0;
+int temp = 0;
+*max1 = ar[0];
+*max2 = ar[1];
+
+if(*max2 > *max1){
+    temp = *max1;
+    *max1 = *max2;
+    *max2 = temp;
+}
+
+for(i = 2; i < size; i++){
+    if(ar[i] > *max1){
+        *max2 = *max1;
+        *max1 = ar[i];
+    }else if(ar[i] < *max1 && ar[i] > *max2){
+        *max2 = ar[i];
+    }
+}
 ```
 
-<span class="functions">functionnamehere2</span>
+<span class="functions">absoluteSum1D()</span>
 
 ```c
-// Parameters: 
+// Parameters: size, vector[]
+int i = 0;
+float sum = 0.0;
+
+for(i = 0; i < size; i++){
+    // fabs: float absolute, abs: int absolute
+    sum += fabs(vector[i]);
+}
+return sum;
 ```
 
-<span class="functions">functionnamehere2</span>
+<span class="functions">insertChar()</span>
 
 ```c
-// Parameters: 
+// Parameters: *str1, *str2, ch
+int i = 0;
+int j = 0;
+
+while(str1[i] != '\0'){
+    if(i % 3 == 0 && i != 0){
+        str2[j++] = str1[i++];
+        str2[j++] = ch;
+    }else{
+        str2[j] = str1[i];
+        j++;
+        i++;
+    }
+}
+str2[j] = '\0';
+```
+
+<span class="functions">findMinOfMax2D</span>
+
+```c
+// Parameters: int ar[][SIZE], rowSize, colSize
+for(i = 0; i < rowSize; i++){
+    max = ar[i][0];
+    for(j = 1; j < colSize; j++){
+        if(ar[i][j] > max){
+            max = ar[i][j];
+        }
+    }
+    armax[i] = max;
+}
+min = armax[0];
+
+for(k = 1; k < colSize; k++){
+    if(armax[k] < min){
+        min = armax[k];
+    }
+}
+return min;
 ```
 <br><br>
 <!--- //////////////////////////////// MD Separator ////////////////////////////////////////// -->
