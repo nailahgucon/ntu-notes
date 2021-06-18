@@ -42,15 +42,162 @@ return c;
 <!--- //////////////////////////////// MD Separator ////////////////////////////////////////// -->
 <a id="arrays"></a>
 <h3 style="text-align:center">Arrays</h3><br>
-<span class="functions">functionnamehere</span>
+<span class="functions">printReverse()</span>
 
 ```c
-// insert code here
+// Parameters: ar[], size
+int i;
+if(size > 0){
+    for(i = size - 1; i >= 0; i--){
+        printf("%d", ar[i]);
+    }
+    printf("\n");
+}
 ```
+
+<span class="functions">reverseAr1D()</span>
+
+```c
+// Parameters: ar[], size
+int i, temp;
+if(size > 0){
+    for(i = 0; i < size/2; i++){
+        temp = ar[i];
+        ar[i] = ar[size - i - 1];
+        ar[size - i - 1] = temp;
+    }
+}
+```
+
+<span class="functions">findAr1D()</span>
+
+```c
+// Parameters: size, ar[], target
+int j;
+for(j = 0; j < size; j++){
+    if(ar[i] == target)
+        return j;
+    return -1;
+}
+```
+
+<span class="functions">swap2Rows()</span>
+
+```c
+// Parameters: int ar[][SIZE], int r1, int r2
+int temp;
+int n;
+for(n = 0; n < SIZE; n++){
+    temp = ar[r1][n];
+    ar[r1][n] = ar[r2][n];
+    ar[r2][n] = temp;
+}
+
+// if its for col, e.g. ar[n][c1]
+```
+
+<span class="functions">Transpose2D()</span>
+
+```c
+// Parameters: int ar[][SIZE], int rowSize, int colSize
+int h, k;
+int temp;
+
+for(h = 1; h < rowSize; h++){
+    for(k = 0; k < colSize; k++){
+        temp = ar[h][k];
+        ar[h][k] = ar[k][h];
+        ar[k][h] = temp;
+    }
+}
+```
+
+<span class="functions">reduceMatrix2D()</span>
+
+```c
+// Parameters: int ar[][SIZE], int rowSize, int colSize
+int i, j, sum;
+for(j = 0; j < colSize; j++){
+    sum = 0;
+    for(i = j+1; i < rowSize; i++){
+        sum += ar[i][j];
+        ar[i][j] = 0;
+    }
+    ar[j][j] += sum;
+}
+```
+
+<span class="functions">compress2D()</span>
+
+```c
+// Parameters: int data[SIZE][SIZE], int rowSize, int colSize
+int i, j, count, val;
+for(i = 0; i < colSize; i++){
+    val = *( *(data + i) + 0 );
+    count = 0;
+    for(j = 0; j < rowSize; j++){
+        if(data[i][j] == val){
+            count++;
+        }
+        else{
+            printf("%d", val);
+            printf("%d", count);
+            count = 1;
+            val = data[i][j];
+        }
+    }
+    printf("%d", val);
+    printf("%d", count);
+    printf("\n");
+}
+```
+
 <span class="functions">functionnamehere2</span>
 
 ```c
-// insert code here
+// Parameters: 
+```
+
+<span class="functions">functionnamehere2</span>
+
+```c
+// Parameters: 
+```
+
+<span class="functions">functionnamehere2</span>
+
+```c
+// Parameters: 
+```
+
+<span class="functions">functionnamehere2</span>
+
+```c
+// Parameters: 
+```
+
+<span class="functions">functionnamehere2</span>
+
+```c
+// Parameters: 
+```
+
+<span class="functions">functionnamehere2</span>
+
+```c
+// Parameters: 
+```
+
+<span class="functions">functionnamehere2</span>
+
+```c
+// Parameters: 
+```
+
+<span class="functions">functionnamehere2</span>
+
+```c
+// Parameters: 
 ```
 <br><br>
 <!--- //////////////////////////////// MD Separator ////////////////////////////////////////// -->
