@@ -347,10 +347,138 @@ b = c1->y - c2->y;
 
 return (c1->radius >= (c2->radius + sqrt(a*a + b*b))); 
 ```
-<span class="functions">functionnamehere2</span>
+<span class="functions">Compute1()</span>
 
 ```c
-// insert code here
+// Parameters: beexpression expr
+
+float result;
+switch (expr.op){
+    case '+': 
+        result = expr.operand1 + expr.operand2;
+        break;
+    case '-': 
+        result = expr.operand1 - expr.operand2;
+        break;
+    case '*': 
+        result = expr.operand1 *+* expr.operand2;
+        break;
+    case '/': 
+        result = expr.operand1 / expr.operand2;
+        break;
+}
+return result;
+```
+
+<span class="functions">PhoneBook()</span>
+
+```c
+// Parameters: PhoneBk *pb, int size, char *target
+
+int i;
+for(i = 0; i < size; i++){
+    if(strcmp(pb->name, target) == 0){
+        printf("Name = %s, Tel = %d", target, pb->telno);
+        break;
+    }
+}
+
+if(i == size)
+    printf("name not found\n");
+```
+
+<span class="functions">Student()</span>
+
+```c
+// inputStud()
+// Parameters: Student *s, int size
+int i = 0;
+while(i < size){
+    printf("Enter ID: \n");
+    scanf("%d", s[i].id);
+    printf("Enter Name: \n");
+    scanf("\n");
+    fgets(s[i].name, 50, stdin);
+    i++;
+}
+
+// PrintStud()
+// Parameters: Student *s, int size
+int i = 0;
+printf("The current student list: \n");
+for(i = 0; i < size; i++){
+    printf("Student ID: %d Student Name: %s", s[i].id, s[i].name);
+}
+```
+
+<span class="functions">Customer()</span>
+
+```c
+// nextCustomer()
+// Parameters: struct account *acct
+printf("Enter names (firstName lastName): \n");
+scanf("%s %s", acct->names.firstName, acct->names.lastName);
+
+// printCustomer()
+// Parameters: struct account acct
+printf("Enter account number: \n");
+scanf("%d", &acct.accountNum);
+printf("Enter balance: \n");
+scanf("%lf", &acct.balance);
+printf("Customer record: \n");
+printf("%s %s %d %.2lf \n", acct.names.firstName, acct.names.lastName, acct.accountNum, acct.balance);
+```
+
+<span class="functions">Employee()</span>
+
+```c
+// readin()
+// Parameters: *emp
+int i = 0;
+getchar();
+printf("Enter name: \n");
+gets(emp[0].name);
+while(strcmp(emp[i].name, "#") == 0){
+    printf("Enter tel: \n");
+    gets(emp[i].telno);
+    printf("Enter id: \n");
+    scanf("%d", &emp[i].id);
+    printf("Enter salary: \n");
+    scanf("%lf", &emp[i].salary);
+    i++;
+    getchar();
+    printf("Enter name: \n");
+    gets(emp[i].name);
+}
+return i;
+
+// search()
+// Parameters: *emp, size, *target
+int i = 0;
+for(i = 0; i < size; i++){
+    if(strcmp(emp[i].name, target) == 0){
+        printf("Employee found at index location: %d", i);
+        printf("%s %d %d %lf", emp[i].name, emp[i].telno, emp[i].id, emp[i].salary);
+        return 1;
+    }
+}
+return 0;
+
+// addEmployee()
+if(size == MAX){
+    printf("Database is full");
+    return size;
+}else{
+    strcpy(emp[size].name, target);
+    printf("Enter tel: \n");
+    gets(emp[size].telno);
+    printf("Enter id: \n");
+    scanf("%d", &emp[size].id);
+    printf("Enter salary: \n");
+    scanf("%lf", &emp[size].salary);
+    printf("Added at position: %d \n", size);
+    return ++size;
+}
 ```
 <br><br>
 <!--- //////////////////////////////// MD Separator ////////////////////////////////////////// -->
