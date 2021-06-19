@@ -153,6 +153,12 @@ width: 85%;
   text-decoration: none;
 }
 
+.mainPage{
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .tags{
   background-image: linear-gradient(to right, #495496, #404579);
   opacity: 0.8;
