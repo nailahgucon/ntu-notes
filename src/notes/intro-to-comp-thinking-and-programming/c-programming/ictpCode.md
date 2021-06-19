@@ -314,7 +314,7 @@ while(str1[i] != '\0'){
 str2[j] = '\0';
 ```
 
-<span class="functions">findMinOfMax2D</span>
+<span class="functions">findMinOfMax2D()</span>
 
 ```c
 // Parameters: int ar[][SIZE], rowSize, colSize
@@ -593,15 +593,259 @@ return count;
 <!--- //////////////////////////////// MD Separator ////////////////////////////////////////// -->
 <a id="functions-and-pointers"></a>
 <h3 style="text-align:center">Functions & Pointers</h3><br>
-<span class="functions">functionnamehere</span>
+<span class="functions">extEvenDigits()</span>
 
 ```c
-// insert code here
+// Parameters: num
+int rem = 0;
+int factor = 0;
+int rev = 0;
+int newfactor = 0;
+int newrem = 0;
+
+while(num != 0){
+    rem = num % 10;
+    if(rem % 2 == 0){
+        factor += rem;
+        factor *= 10;
+    }
+    num = num / 10;
+}
+newfactor = factor / 10;
+while(newfactor != 0){
+    newrem = newfactor % 10;
+    rev = rev * 10 + newrem;
+    newfactor /= 10;
+}
+if(factor == 0){
+    return -1;
+}else{
+    return rev;
+}
 ```
-<span class="functions">functionnamehere2</span>
+
+<span class="functions">allEvenDigits()</span>
 
 ```c
-// insert code here
+// Parameters: num
+int count = 0;
+int rem = 0;
+
+while(num != 0){
+    rem = num % 10;
+    if(rem % 2 != 0){
+        count++;
+    }
+    num = num / 10;
+}
+if(count > 0){
+    return 0;
+}else{
+    return 1;
+}
+```
+
+<span class="functions">countEvenDigits()</span>
+
+```c
+// Parameters: number
+int count = 0;
+int rem = 0;
+while(number != 0){
+    rem = number % 10;
+    if(rem % 2 == 0){
+        count++;
+    }
+    number /= 10;
+}
+return count;
+```
+
+<span class="functions">sumSqDigits()</span>
+
+```c
+// Parameters: num
+int rem = 0;
+int sqr = 0;
+
+while(num != 0){
+    rem = num % 10;
+    sqr = sqr + (rem * rem);
+    num = num / 10;
+}
+return sqr;
+```
+
+<span class="functions">computeTotal()</span>
+
+```c
+// Parameters: noOfLines
+int i = 0;
+int noOfNum = 0;
+int num = 0;
+int total = 0;
+int j = 1;
+for(i = 1; i <= noOfLines; i++){
+    num = 0;
+    total = 0;
+    printf("Enter line %d: \n", i);
+    scanf("%d", &noOfNum);
+    while(j <= noOfNum){
+        scanf("%d", &num);
+        total += num;
+        j++;
+    }
+    j = 1;
+    printf("Total: %d \n", total);
+}
+```
+
+<span class="functions">printPattern3()</span>
+
+```c
+// Parameters: height
+int i = 1;
+int j = 1;
+int number = 1;
+
+for(i = 1; i <= height; i++){
+    for(j = 1; j <= i; j++){
+        if(number == 10){
+            number = 0;
+        }
+        if(j == 1){
+            number = i;
+        }
+        printf("%d", number);
+        number++;
+    }
+    printf("\n");
+}
+```
+
+<span class="functions">printPattern2()</span>
+
+```c
+// Parameters: height
+int i = 0;
+int even = 0;
+int odd = 0;
+
+for(i = 1; i <= height; i++){
+    if(i % 2 != 0){
+        for(odd = 0; odd < i; odd++){
+            if(odd % 2 != 0){
+                printf("B");
+            }else{
+                printf("A");
+            }
+        }
+        printf("\n");
+    }else{
+        for(even = 0; even < i; even++){
+            if(even % 2 != 0){
+                printf("A");
+            }else{
+                printf("B");
+            }
+        }
+        printf("\n");
+    }
+}
+```
+
+<span class="functions">perfectProd()</span>
+
+```c
+// Parameters: num
+int n, i, sum, result = 1;
+
+for(n = 1; n <= num; n++){
+    i = 1;
+    sum = 0;
+    while(i < n){
+        if(n % i == 0){
+            sum += i;
+        }
+        i++;
+    }
+    if(sum == n){
+        printf("Perfect number: %d \n", n);
+        result *= n;
+    }
+}
+return result;
+```
+
+<span class="functions">power()</span>
+
+```c
+// Parameters: num, p
+int i = 0;
+int k = 0;
+float result = 1;
+
+if(p < 0){
+    for(k = 0; k < abs(p); k++){
+        result /= num;
+    }
+}else{
+    for(i = 0; i < p; i++){
+        result *= num;
+    }
+}
+return result;
+```
+
+<span class="functions">reverseDigits()</span>
+
+```c
+// Parameters: int num
+int rem = 0;
+int rev = 0;
+while(num != 0){
+    rem = num % 10; // takes last number
+    rev = rev * 10 + rem; //add rem to back of rev
+    num = num / 10; // remove last digit
+}
+return rev;
+
+// for *result, set it to 0 and replace rev
+```
+
+<span class="functions">ComputePay()/ComputeSalary()</span>
+
+```c
+// ComputePay1
+int excessHours = 0;
+int totalpay = 0;
+if(noOfHours <= 160){
+    return noOfHours * PayRate;
+}else{
+    excessHours = noOfHours - 160;
+    totalpay = (160 * PayRate) + (excessHours * PayRate * 1.5);
+    return totalpay;
+}
+
+// ComputePay2
+int excessHours = 0;
+if(noOfHours <= 160){
+    *grossPay = noOfHours * PayRate;
+}else{
+    excessHours = noOfHours - 160;
+    *grossPay = (160 * PayRate) + (excessHours * PayRate * 1.5);
+}
+
+//readInput
+// Parameters: *id, *noOfHours, *payRate
+printf("Enter ID: \n");
+scanf("%d", id);
+if(*id == -1)
+    return;
+printf("Enter no. of hrs: \n");
+scanf("%d", noOfHours);
+printf("Enter hourlt pay: \n");
+scanf("%d", payRate);
 ```
 <br><br>
 <!--- //////////////////////////////// MD Separator ////////////////////////////////////////// -->
