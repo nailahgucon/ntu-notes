@@ -115,6 +115,9 @@ int main()
 	//scanf("%c", &reply);
 }
 
+// ignore these curly brackets
+}}
+
 ////////////////////////////////////////////////////////////
 //Question 4
 
