@@ -17,13 +17,14 @@ Write a function <span class="functions">balanced()</span> that determines if an
 <span class="functions">int balanced(char *expression);</span>
 <br><br>
 **The following expressions are balanced because the order and quantity of the parentheses match:**<br>
-()<br>
+<p>()<br>
 ([])<br>
-{[]()[]}<br>
+{[]()[]}<br></p>
 <br>
+
 **The following expressions are not balanced:**<br>
-{{)]<br>
-[({{)])
+<p>{{)]<br>
+[({{)])</p>
 <br><br>
 
 ```c
