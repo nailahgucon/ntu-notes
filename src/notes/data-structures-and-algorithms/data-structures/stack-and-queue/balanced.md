@@ -103,9 +103,10 @@ int main()
 	else
 		printf("balanced!\n");
 
-	// if (balanced("[({{)])")) printf("not balanced!\n");
-	// else
-	// 	printf("balanced!\n");
+	if (balanced("[({{)])")) //}}
+      printf("not balanced!\n"); 
+	else
+		printf("balanced!\n");
 
 
 	return 0;
