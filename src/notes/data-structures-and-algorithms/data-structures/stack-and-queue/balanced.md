@@ -103,9 +103,9 @@ int main()
 	else
 		printf("balanced!\n");
 
-	if (balanced("[({{)])")) printf("not balanced!\n");
-	else
-		printf("balanced!\n");
+	// if (balanced("[({{)])")) printf("not balanced!\n");
+	// else
+	// 	printf("balanced!\n");
 
 
 	return 0;
@@ -114,9 +114,7 @@ int main()
 	//fflush(stdin);
 	//scanf("%c", &reply);
 }
-
 // ignore these curly brackets
-}}
 
 ////////////////////////////////////////////////////////////
 //Question 4
