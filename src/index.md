@@ -10,7 +10,7 @@ layout: "base.njk"
 {% endfor %} -->
 
 <div class = "mainPage">
-<i>Disclamer: This blog is best viewed on PCs and Tablets.</i>
+<i>Disclaimer: This blog is best viewed on PCs and Tablets.</i>
 <br><br>
 <h2>Welcome to Nailah's Notes Blog!</h2>
 <h3>NTU Computer Science Student</h3>
