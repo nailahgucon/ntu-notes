@@ -19,6 +19,12 @@ Write a function <span class="functions">balanced()</span> that determines if an
 <img src = "{{ '/images/dsa-stackandqueue-balanced.PNG' | url }}" class="diagrams">
 <br><br>
 
+**The main function:**
+<br>
+<img src = "{{ '/images/dsa-stackandqueue-balanced-mainfunction.PNG' | url }}" class="diagrams">
+<br><br>
+
+
 ```c
 //#define _CRT_SECURE_NO_WARNINGS
 #include "stdio.h"
@@ -76,46 +82,7 @@ int isEmptyQueue(Queue *s);
 
 int  balanced(char *expression);
 
-//////////////////////////////////////////////////////////////////
-/////
-
-int main()
-{
-	Stack s;
-	Queue q;
-	int item[]={1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1};
-	int i;
-	char *word1="A man a plan a canal Panama";
-	char *word2="Superman in the sky";
-
-	//char reply;
-
-	//for question 4
-	if (balanced("()")) printf("not balanced!\n");
-	else
-		printf("balanced!\n");
-
-	if (balanced("[()]")) printf("not balanced!\n");
-	else
-		printf("balanced!\n");
-
-	if (balanced("{[]()[]}")) printf("not balanced!\n");
-	else
-		printf("balanced!\n");
-
-	if (balanced("[({{)])")) //}}
-      printf("not balanced!\n"); 
-	else
-		printf("balanced!\n");
-
-
-	return 0;
-
-	//printf("enter any key to exit:");
-	//fflush(stdin);
-	//scanf("%c", &reply);
-}
-// ignore these curly brackets
+//////////////////////////// insert main function here //////////////////////////////////////
 
 ////////////////////////////////////////////////////////////
 //Question 4
