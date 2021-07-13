@@ -7,9 +7,9 @@ pre[class*="language-"] {
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	font-size: 1em;
 	text-align: left;
-	white-space: pre;
+	white-space: normal !important;
 	word-spacing: normal;
-	word-break: break-all;
+	word-break: break-word !important;
 	word-wrap: normal;
 	line-height: 1.5;
 
