@@ -279,6 +279,7 @@ button:focus {
   cursor: pointer;
   transition: 0.2s;
   font-size: 1.1em;
+  color: #717171;
 }
 
 /* Change background color of buttons on hover */

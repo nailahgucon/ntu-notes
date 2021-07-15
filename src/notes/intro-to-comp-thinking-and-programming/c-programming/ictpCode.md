@@ -8,16 +8,16 @@ pageTitle: More Code done in ICTP
 *Functions of questions that i do not have the question paper of*
 <br><br>
 
-**Jump to:** 
-<span class="tags"><a href="#control-flow">Control Flow</a></span>
-<span class="tags"><a href="#arrays">Arrays</a></span>
-<span class="tags"><a href="#character-strings">Character Strings</a></span>
-<span class="tags"><a href="#functions-and-pointers">Functions & Pointers</a></span>
-<span class="tags"><a href="#structures">Structures</a></span>
-<hr>
-<br>
+<div class="tab">
+  <a class="tablinks" href="#control-flow" onclick="openTab(event, 'control-flow')" id="defaultOpen">Control Flow</a>
+  <a class="tablinks" href="#arrays" onclick="openTab(event, 'arrays')">Arrays</a>
+  <a class="tablinks" href="#character-strings" onclick="openTab(event, 'character-strings')">Character Strings</a>
+  <a class="tablinks" href="#functions-and-pointers" onclick="openTab(event, 'cfunctions-and-pointers')">Functions & Pointers</a>
+  <a class="tablinks" href="#structures" onclick="openTab(event, 'structures')">Structures</a>
+</div>
+
 <a id="control-flow"></a>
-<h3 style="text-align:center">Control Flow</h3><br>
+<h3 style="text-align:center; padding-top:100px;">Control Flow</h3><br>
 <span class="functions">grade()</span>
 
 ```c
@@ -41,7 +41,7 @@ return c;
 <br><br>
 <!--- //////////////////////////////// MD Separator ////////////////////////////////////////// -->
 <a id="arrays"></a>
-<h3 style="text-align:center">Arrays</h3><br>
+<h3 style="text-align:center; padding-top:100px;">Arrays</h3><br>
 <span class="functions">printReverse()</span>
 
 ```c
@@ -339,7 +339,7 @@ return min;
 <br><br>
 <!--- //////////////////////////////// MD Separator ////////////////////////////////////////// -->
 <a id="character-strings"></a>
-<h3 style="text-align:center">Character Strings</h3><br>
+<h3 style="text-align:center; padding-top:100px;">Character Strings</h3><br>
 <span class="functions">palindrome()</span>
 
 ```c
@@ -592,7 +592,7 @@ return count;
 <br><br>
 <!--- //////////////////////////////// MD Separator ////////////////////////////////////////// -->
 <a id="functions-and-pointers"></a>
-<h3 style="text-align:center">Functions & Pointers</h3><br>
+<h3 style="text-align:center; padding-top:100px;">Functions & Pointers</h3><br>
 <span class="functions">extEvenDigits()</span>
 
 ```c
@@ -850,7 +850,7 @@ scanf("%d", payRate);
 <br><br>
 <!--- //////////////////////////////// MD Separator ////////////////////////////////////////// -->
 <a id="structures"></a>
-<h3 style="text-align:center">Structures</h3><br>
+<h3 style="text-align:center; padding-top:100px;">Structures</h3><br>
 <span class="functions">CircleIntersect()</span>
 
 ```c
@@ -1010,3 +1010,17 @@ if(size == MAX){
 ```
 <br><br>
 <!--- //////////////////////////////// MD Separator ////////////////////////////////////////// -->
+
+<script>
+function openTab(evt, tabName) {
+  var i, tablinks;
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
