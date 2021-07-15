@@ -169,32 +169,6 @@ width: 85%;
   text-decoration: none;
 }
 
-/* .social-tags{
-  background-image: linear-gradient(to right, #495496, #404579);
-  opacity: 0.9;
-  border-radius: 10px;
-  border: 0;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-  color: #fff;
-  cursor: pointer;
-  padding: 10px;
-  width: 150px;
-  display: inline-block;
-  margin: auto;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.social-tags a{
-  color: #fff;
-  font-size: 1em;
-  text-decoration: none;
-}
-
-.social-tags i{
-  font-size: 2em;
-} */
-
 .mainPage{
   width: 60%;
   margin: 0 auto;
@@ -290,6 +264,40 @@ button:focus {
  background-color: #eee;
  padding: 15px 0;
 }
+
+/* tabs for DSA */
+/* Style the tab */
+.tab {
+  overflow: hidden;
+}
+
+/* Style the buttons inside the tab */
+.tablinks {
+  float: left;
+  margin: 10px 10px;
+  padding: 10px 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 1.1em;
+}
+
+/* Change background color of buttons on hover */
+.tablinks:hover {
+  background-color: #49559636;
+  border-radius: 8px;
+}
+
+/* Create an active/current tablink class */
+.tablinks.active {
+  border-bottom: 3px solid #404579;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+}
+/* end of tabs */
 
 /* Card Styling */
 .card-div{
