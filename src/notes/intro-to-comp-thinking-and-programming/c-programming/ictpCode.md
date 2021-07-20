@@ -3,12 +3,22 @@ title: Intro to Computational Thinking and Programming
 pageTitle: More Code done in ICTP
 ---
 
+<style>
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 68px;
+  z-index: 1;
+  background-color: #f3f5f9;
+}
+</style>
+
 ## More Code done in ICTP
 
 *Functions of questions that i do not have the question paper of*
 <br><br>
 
-<div class="tab">
+<div class="tab sticky">
   <a class="tablinks" href="#control-flow" onclick="openTab(event, 'control-flow')" id="defaultOpen">Control Flow</a>
   <a class="tablinks" href="#arrays" onclick="openTab(event, 'arrays')">Arrays</a>
   <a class="tablinks" href="#character-strings" onclick="openTab(event, 'character-strings')">Character Strings</a>
@@ -17,7 +27,7 @@ pageTitle: More Code done in ICTP
 </div>
 
 <a id="control-flow"></a>
-<h3 style="text-align:center; padding-top:100px;">Control Flow</h3><br>
+<h3 style="text-align:center; padding-top:140px;">Control Flow</h3><br>
 <span class="functions">grade()</span>
 
 ```c
@@ -41,7 +51,7 @@ return c;
 <br><br>
 <!--- //////////////////////////////// MD Separator ////////////////////////////////////////// -->
 <a id="arrays"></a>
-<h3 style="text-align:center; padding-top:100px;">Arrays</h3><br>
+<h3 style="text-align:center; padding-top:150px;">Arrays</h3><br>
 <span class="functions">printReverse()</span>
 
 ```c
@@ -339,7 +349,7 @@ return min;
 <br><br>
 <!--- //////////////////////////////// MD Separator ////////////////////////////////////////// -->
 <a id="character-strings"></a>
-<h3 style="text-align:center; padding-top:100px;">Character Strings</h3><br>
+<h3 style="text-align:center; padding-top:150px;">Character Strings</h3><br>
 <span class="functions">palindrome()</span>
 
 ```c
@@ -592,7 +602,7 @@ return count;
 <br><br>
 <!--- //////////////////////////////// MD Separator ////////////////////////////////////////// -->
 <a id="functions-and-pointers"></a>
-<h3 style="text-align:center; padding-top:100px;">Functions & Pointers</h3><br>
+<h3 style="text-align:center; padding-top:150px;">Functions & Pointers</h3><br>
 <span class="functions">extEvenDigits()</span>
 
 ```c
@@ -850,7 +860,7 @@ scanf("%d", payRate);
 <br><br>
 <!--- //////////////////////////////// MD Separator ////////////////////////////////////////// -->
 <a id="structures"></a>
-<h3 style="text-align:center; padding-top:100px;">Structures</h3><br>
+<h3 style="text-align:center; padding-top:150px;">Structures</h3><br>
 <span class="functions">CircleIntersect()</span>
 
 ```c
